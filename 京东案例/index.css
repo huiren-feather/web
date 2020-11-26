@@ -1,0 +1,101 @@
+header {
+    background-color: pink;
+    height: 80px;
+    width: 100%;
+    /* background: green url(images/header.jpg) no-repeat center ; */
+}
+.w {
+    width: 1190px;
+    margin: 0 auto;
+
+}
+a.top {
+
+    height: 80px;
+}
+.shotcut {
+    background-color: #ccc;
+    height: 30px;
+}
+.shotcut .city {
+    padding-left: 200px;
+    line-height: 30px;
+    color: skyblue;
+}
+.shotcut .city a {
+    color: green;
+}
+.nav a {
+    display: inline;
+}
+.nav li {
+    line-height: 30px;
+}
+.nav li a:nth-child(2) {
+    color: red;
+}
+.rightBorder {
+    padding-right: 5px;
+    margin-right: 5px;
+    border-right:  1px solid black;
+
+}
+i {
+    
+		font-family: "icomoon";
+	
+}
+.middle {
+    background-color: pink;
+    height: 140px;
+    position: relative;
+}
+.logo {
+    background-color: #fff;
+    height: 170px;
+}
+h1 {
+    position: absolute;
+    top: -30px;
+    left: 0;
+}
+.form {
+    width: 550px;
+    height: 30px;
+    background-color: #fff;
+    position: absolute;
+    top: 30px;
+    left: 300px;
+    border: 1px solid red;
+}
+.form input {
+    border: 0;
+    width: 500px;
+    height: 30px;
+    padding-left: 3px;
+    background-color: #000;
+    box-sizing: border-box;
+
+}
+.form button {
+    border: 0;
+    height: 100%;
+    width: 50px;
+
+}
+.hotwords {
+    position: absolute;
+    top: 65px;
+    left: 300px;
+    font-size:12px;
+}
+.hotwords ul li a {
+    padding-right: 4px;
+}
+.shopCar {
+    position: absolute;
+    top: 30px;
+    left: 900px;
+    border: 1px solid red;
+}
+}

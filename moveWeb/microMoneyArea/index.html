@@ -1,0 +1,65 @@
+<!--<!DOCTYPE html>
+<html lang="zh-CN">    原来是lang="en" 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>袁红辉的微金所</title>
+</head>
+<body>
+    
+</body>
+</html>
+-->
+
+<!-- Bootstrap提供的模板 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+      <!-- 设置文件的字符编码 -->
+    <meta charset="utf-8">
+    <!--设置浏览器的兼容模式版本（让IE使用最新的渲染引擎工作）
+    快捷方式：meta：compa
+    -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 声明当前网页在移动端浏览器中展示的相关设置 
+        快捷方式：meta：vp-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！    -->
+    <title>袁红辉的微金所</title>
+
+    <!--引入 Bootstrap 的核心样式表文件 -->
+    
+    <link href="lib/Bootstrap-3.3.6/css/bootstrap.css" rel="stylesheet">
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    
+    <!-- 条件注释的作用：当判断条件满足时，就会执行注释中的代码；若不满足，会当做注释忽略掉 -->
+    <!--   让低于IE9的浏览器可以识别html5的新标签  -->
+    <!-- respond让低版本浏览器可以使用css3的媒体查询 -->
+     <!--[if lt IE 9]>
+      <script src="lib/html5shiv/html5shiv.min.js"></script>
+      <script src="lib/respond/respond.min.js"></script>
+    <![endif]-->
+    <!-- 自己写的文件都放在最下面，防止被别的东西覆盖 -->
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+      .container{
+        height: 1000px;
+        background-color: #ff4400;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>你好，世界！</h1>
+    <div class="container">
+
+    </div>
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="lib/jquery-2.1.4/jquery.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="lib/Bootstrap-3.3.6/js/bootstrap.js"></script>
+    <!-- 引入自己的JS文件 -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

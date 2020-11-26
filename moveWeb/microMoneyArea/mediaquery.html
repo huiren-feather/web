@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            height: 1000px;
+            background-color: #ff4400;
+
+        }
+
+        .container {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* 使用媒体查询时，使用min-width判断条件要从小到到 */
+        @media (min-width: 768px) {
+
+            /* 当最小宽度为1280时，容器的宽度变为1280 */
+            .container {
+                width: 750px;
+
+            }
+        }
+
+        @media (min-width: 992px) {
+
+            /* 当最小宽度为1280时，容器的宽度变为1280 */
+            .container {
+                width: 970px;
+
+            }
+        }
+
+        @media (min-width: 1200px) {
+
+            /* 当最小宽度为1280时，容器的宽度变为1280 */
+            .container {
+                width: 1170px;
+
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+    </div>
+</body>
+
+</html>
