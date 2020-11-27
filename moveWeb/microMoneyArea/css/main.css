@@ -6,37 +6,144 @@
 
 */
 
+
 /* 公共样式 */
+
 body {
     font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
 }
 
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'weijinsuo';
+    src: url('../fonts/MiFie-Web-Font.eot?6cyhth');
+    src: url('../fonts/MiFie-Web-Font.eot?6cyhth#iefix') format('embedded-opentype'), url('../fonts/MiFie-Web-Font.svg?6cyhth#MiFie-Web-Font') format('svg'), url('../fonts/MiFie-Web-Font.ttf?6cyhth') format('truetype'), url('../fonts/MiFie-Web-Font.woff?6cyhth') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    font-family: weijinsuo;
+    font-style: normal;
+}
+
+.icon-mobilephone::before {
+    content: "\e908";
+    font-size: 13px;
+}
+
+.icon-telephone::before {
+    content: "\e909";
+    font-size: 15px;
+}
+
+
+/* a {
+    text-decoration: none;
+} */
+
+
 /* header */
+
 header {
     height: 200px;
     background-color: #f0f0f0;
+}
 
-}
-header>.topbar{
-height: 40px;
-border-bottom: 1px solid #cccccc;
-}
-header>.topbar>.container{
+header>.topbar {
     height: 40px;
-    background-color: red;
-    
-    }
+    border-bottom: 1px solid #cccccc;
+    line-height: 40px;
+}
+
+header>.topbar>.container>.row>div {
+    height: 40px;
+    font-size: 12px;
+    color: #888888;
+}
+
+
+/* div+div  */
+
+header>.topbar>.container>.row>div+div {
+    border-left: 1px solid #cccccc;
+}
+
+header .mobile-link {
+    font-size: 12px;
+    color: #888888;
+}
+
+header .mobile-link:hover {
+    text-decoration: none;
+}
+
+header .mobile-link:link {
+    TEXT-DECORATION: none
+}
+
+header .mobile-link img {
+    display: none;
+}
+
+header .mobile-link:hover img {
+    display: block;
+    position: absolute;
+    top: 28px;
+    left: 20px;
+}
+
+header a {
+    font-size: 12px;
+    color: #888888;
+}
+
+header .problems:link,
+:visited,
+:hover {
+    text-decoration: none;
+    color: #888888;
+}
+
+header>.topbar>.container {
+    height: 40px;
+    background-color: skyblue;
+}
+
+header .container .login {
+    display: block;
+    height: 25px;
+    width: 45px;
+}
+
+
 /* 测试样式 */
-section{
+
+section {
     height: 200px;
     background-color: #fff;
 }
+
+
 /* nth-child(2n+1):父元素下第几个元素，n从0开始；所以在这里有header，奇数变偶数 */
-section:nth-child(2n+1){
-background-color: pink;
+
+section:nth-child(2n+1) {
+    background-color: pink;
 }
+
 
 /*  脚注  */
-footer{
 
-}
+footer {}
