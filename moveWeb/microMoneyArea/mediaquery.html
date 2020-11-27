@@ -22,7 +22,12 @@
             margin: 0 auto;
         }
 
-        /* 使用媒体查询时，使用min-width判断条件要从小到到 */
+        /* 使用媒体查询时，使用min-width判断条件要从小到大
+        使用max-width判断条件要从大到小
+         */
+         /* 可以有多个条件判断 
+         @media (min-width: 768px) and ()  or ()  {}
+         */
         @media (min-width: 768px) {
 
             /* 当最小宽度为1280时，容器的宽度变为1280 */

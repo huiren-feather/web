@@ -1,0 +1,42 @@
+/* 
+此项目约定：
+1.样式都通过ID去限定
+2.尽可能多使用子代选择器
+3.
+
+*/
+
+/* 公共样式 */
+body {
+    font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+}
+
+/* header */
+header {
+    height: 200px;
+    background-color: #f0f0f0;
+
+}
+header>.topbar{
+height: 40px;
+border-bottom: 1px solid #cccccc;
+}
+header>.topbar>.container{
+    height: 40px;
+    background-color: red;
+    
+    }
+/* 测试样式 */
+section{
+    height: 200px;
+    background-color: #fff;
+}
+/* nth-child(2n+1):父元素下第几个元素，n从0开始；所以在这里有header，奇数变偶数 */
+section:nth-child(2n+1){
+background-color: pink;
+}
+
+/*  脚注  */
+footer{
+
+}
