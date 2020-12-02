@@ -7,6 +7,49 @@
 */
 
 
+/* 扩展样式，生成Bootstrapcss按钮样式 */
+
+.btn-yhh:hover,
+.btn-yhh:focus,
+.btn-yhh:active,
+.btn-yhh.active,
+.open .dropdown-toggle.btn-yhh {
+    color: #ffffff;
+    background-color: #F75B23;
+    border-color: #F75B23;
+}
+
+.btn-yhh:active,
+.btn-yhh.active,
+.open .dropdown-toggle.btn-yhh {
+    background-image: none;
+}
+
+.btn-yhh.disabled,
+.btn-yhh[disabled],
+fieldset[disabled] .btn-yhh,
+.btn-yhh.disabled:hover,
+.btn-yhh[disabled]:hover,
+fieldset[disabled] .btn-yhh:hover,
+.btn-yhh.disabled:focus,
+.btn-yhh[disabled]:focus,
+fieldset[disabled] .btn-yhh:focus,
+.btn-yhh.disabled:active,
+.btn-yhh[disabled]:active,
+fieldset[disabled] .btn-yhh:active,
+.btn-yhh.disabled.active,
+.btn-yhh[disabled].active,
+fieldset[disabled] .btn-yhh.active {
+    background-color: #F75B23;
+    border-color: #F75B23;
+}
+
+.btn-yhh .badge {
+    color: #F75B23;
+    background-color: #ffffff;
+}
+
+
 /* 公共样式 */
 
 body {
@@ -117,6 +160,121 @@ header .problems:link,
     color: #888888;
 }
 
+.navbar-itcast {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+}
+
+.navbar-itcast .navbar-brand {
+    color: #777;
+}
+
+.navbar-itcast .navbar-brand:hover,
+.navbar-itcast .navbar-brand:focus {
+    color: #5e5e5e;
+    background-color: transparent;
+}
+
+.navbar-itcast .navbar-text {
+    color: #777;
+}
+
+.navbar-itcast .navbar-nav>li>a {
+    color: #777;
+}
+
+.navbar-itcast .navbar-nav>li>a:hover,
+.navbar-itcast .navbar-nav>li>a:focus {
+    color: #333;
+    background-color: transparent;
+}
+
+.navbar-itcast .navbar-nav>.active>a,
+.navbar-itcast .navbar-nav>.active>a:hover,
+.navbar-itcast .navbar-nav>.active>a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+}
+
+.navbar-itcast .navbar-nav>.disabled>a,
+.navbar-itcast .navbar-nav>.disabled>a:hover,
+.navbar-itcast .navbar-nav>.disabled>a:focus {
+    color: #ccc;
+    background-color: transparent;
+}
+
+.navbar-itcast .navbar-toggle {
+    border-color: #ddd;
+}
+
+.navbar-itcast .navbar-toggle:hover,
+.navbar-itcast .navbar-toggle:focus {
+    background-color: #ddd;
+}
+
+.navbar-itcast .navbar-toggle .icon-bar {
+    background-color: #888;
+}
+
+.navbar-itcast .navbar-collapse,
+.navbar-itcast .navbar-form {
+    border-color: #e7e7e7;
+}
+
+.navbar-itcast .navbar-nav>.open>a,
+.navbar-itcast .navbar-nav>.open>a:hover,
+.navbar-itcast .navbar-nav>.open>a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+}
+
+@media (max-width: 767px) {
+    .navbar-itcast .navbar-nav .open .dropdown-menu>li>a {
+        color: #777;
+    }
+    .navbar-itcast .navbar-nav .open .dropdown-menu>li>a:hover,
+    .navbar-itcast .navbar-nav .open .dropdown-menu>li>a:focus {
+        color: #333;
+        background-color: transparent;
+    }
+    .navbar-itcast .navbar-nav .open .dropdown-menu>.active>a,
+    .navbar-itcast .navbar-nav .open .dropdown-menu>.active>a:hover,
+    .navbar-itcast .navbar-nav .open .dropdown-menu>.active>a:focus {
+        color: #555;
+        background-color: #e7e7e7;
+    }
+    .navbar-itcast .navbar-nav .open .dropdown-menu>.disabled>a,
+    .navbar-itcast .navbar-nav .open .dropdown-menu>.disabled>a:hover,
+    .navbar-itcast .navbar-nav .open .dropdown-menu>.disabled>a:focus {
+        color: #ccc;
+        background-color: transparent;
+    }
+}
+
+.navbar-itcast .navbar-link {
+    color: #777;
+}
+
+.navbar-itcast .navbar-link:hover {
+    color: #333;
+}
+
+.navbar-itcast .btn-link {
+    color: #777;
+}
+
+.navbar-itcast .btn-link:hover,
+.navbar-itcast .btn-link:focus {
+    color: #333;
+}
+
+.navbar-itcast .btn-link[disabled]:hover,
+fieldset[disabled] .navbar-itcast .btn-link:hover,
+.navbar-itcast .btn-link[disabled]:focus,
+fieldset[disabled] .navbar-itcast .btn-link:focus {
+    color: #ccc;
+}
+
 header>.topbar>.container {
     height: 40px;
     background-color: skyblue;
@@ -126,6 +284,12 @@ header .container .login {
     display: block;
     height: 25px;
     width: 45px;
+}
+
+.btn-yhh {
+    color: #ffffff;
+    background-color: #F75B23;
+    border-color: #F75B23;
 }
 
 

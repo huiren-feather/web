@@ -37,3 +37,8 @@ header .problems:link,
   color: #888888;
 
 }
+
+#### icomoon的使用：生成字体图标
+
+import icons---选择做好的svg---在Untitled Set下，选择你想要的图标---点击右下角的GenerateFont---【修改字体名字和类名前缀：点击Preferences--在里面修改】---点击download
+
