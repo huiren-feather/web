@@ -2,7 +2,98 @@
 
 先熟悉它可以做什么
 
+基础CSS：这块只是将我们以前常用的一些界面元素做了样式美化，如果需要使用，找到响应类名，加到元素上即可
+
+组件：就是讲日常使用的一些功能块例如下拉菜单提前写好，我们使用时直接找到对应的DEMO，做相应的调整即可
+
+js插件：
+
+#### 实战：
+
+##### 1.搭建Bootstrap页面骨架及项目目录结构
+
+├─ /weijinsuo/ ··················· 项目所在目录
+└─┬─ /css/ ······················· 我们自己的CSS文件
+  ├─ /font/ ······················ 使用到的字体文件
+  ├─ /img/ ······················· 使用到的图片文件
+  ├─ /js/ ························ 自己写的JS脚步
+  ├─ /lib/ ······················· 从第三方下载回来的库【只用不改】
+  ├─ /favicon.ico ················ 站点图标
+  └─ /index.html ················· 入口文件
+
+##### 2.约定编码规范（遇到在做）
+
+###### 2.1 HTML约定
+
+在head中引入必要的CSS文件，优先引入第三方的CSS，方便自己的样式做覆盖；
+
+在body末尾引入必要的js文件，优先引入第三方的JS，注意文件之间的依赖关系，比如Bootstrap.js依赖jQuery，那就先引入jquery.js，再引入Bootstrap.js
+
+###### 2.2 CSS约定
+
+除了公共级别样式，其余样式都有模块前缀（公司一般会把他的祖辈全部放进去）
+
+尽量使用直接子代选择器，少用后代选择器
+
+##### 3.页面结构
+
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Document</title>
+
+</head>
+
+<body>
+
+顶部栏
+
+topbar
+
+导航栏
+
+navbar
+
+
+
+
+
+</body>
+
+</html>
+
+##### 4.Viewport设置
+
+视口的作用：在移动浏览器中，当页面宽度超出设备，浏览器内部虚拟的一个页面容器，将页面容器缩放到设备这么大，然后展示
+- 目前大多数手机浏览器的视口（承载页面的容器）宽度都是980；
+- 视口的宽度可以通过meta标签设置
+- 此属性为移动端页面视口设置，当前值表示在移动端页面的宽度为设备的宽度，并且不缩放（缩放级别为1）
+  + width:视口的宽度
+  + initial-scale：初始化缩放
+  + user-scalable:是否允许用户自行缩放（值：yes/no; 1/0）
+  + minimum-scale:最小缩放，一般设置了用户不允许缩放，就没必要设置最小和最大缩放
+  + maximum-scale:最大缩放
+
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+快捷方式：meta：vp
+
+##### 5.站点图标
+
+  <link rel="shortcut icon" href="img/c_06.jpg">
+
+
+
 #### 媒体查询
+
+根据判断条件，决定一段js代码是否被执行
 
 @media (min-width: 768px)  and（） or（） {}
 
@@ -40,5 +131,13 @@ header .problems:link,
 
 #### icomoon的使用：生成字体图标
 
-import icons---选择做好的svg---在Untitled Set下，选择你想要的图标---点击右下角的GenerateFont---【修改字体名字和类名前缀：点击Preferences--在里面修改】---点击download
+import icons---选择做好的svg---在Untitled Set下，选择你想要的图标---点击右下角的GenerateFont---【修改字体名字和类名前缀：点击Preferences--在里面修改】---点击download---
+
+
+
+谷歌中修改源代码，同步到本地文件中：
+
+F12 ----sources----filesystem----+-----右键----add folder to workspace----同意
+
+![image-20201207202759827](C:\Users\yuan-honghui\AppData\Roaming\Typora\typora-user-images\image-20201207202759827.png)
 
