@@ -109,7 +109,7 @@ a:hover {
 /* header */
 
 header {
-    height: 200px;
+    height: 120px;
     background-color: #f0f0f0;
 }
 
@@ -323,10 +323,91 @@ header .container .login {
 }
 
 
+/* 广告轮播 */
+
+#main_ad {}
+
+#main_ad>.carousel-inner>.item {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#main_ad>.carousel-inner>.item>img {
+    width: 100%;
+}
+
+
+/* 可以通过媒体查询的方式控制 */
+
+@media (min-width: 768px) {
+    #main_ad>.carousel-inner>.item {
+        height: 410px;
+    }
+}
+
+
+/* 特色介绍 */
+
+#special {
+    padding: 50px 0;
+    border-bottom: 1px solid #c0c0c0;
+}
+
+.icon-uniE907:before {
+    content: "\e907";
+}
+
+#special i {
+    font-size: 34px;
+}
+
+#special>.container>.row>div {
+    height: 50px;
+}
+
+#special>.container>.row>div {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+/* 立即预约 */
+
+#appoint {
+    font-size: 20px;
+    border-bottom: 1px solid #c0c0c0;
+}
+
+#appoint p {
+    line-height: 60px;
+}
+
+#appoint a,
+span {
+    color: red;
+}
+
+.icon-uniE906:before {
+    content: "\e906";
+}
+
+.icon-uniE905:before {
+    content: "\e905";
+}
+
+
+/* 产品推荐 */
+
+#products {
+    background-color: #f0f0f0;
+    padding: 40px 0;
+}
+
+
 /* 测试样式 */
 
 section {
-    height: 200px;
     background-color: #fff;
 }
 

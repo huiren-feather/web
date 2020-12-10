@@ -89,7 +89,21 @@ navbar
 
   <link rel="shortcut icon" href="img/c_06.jpg">
 
+##### 6.在小屏幕上展示宽图，并居中显示
 
+a.背景图
+
+  background-repeat: no-repeat;
+
+  background-position: center center;
+
+b.
+
+##### 7.$element.data()
+
+一个函数，专门用于取元素上的自定义属性data-xxx
+
+函数参数：我们要取的属性名称，即xxx
 
 #### 媒体查询
 
