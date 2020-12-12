@@ -97,13 +97,27 @@ a.背景图
 
   background-position: center center;
 
-b.
+b.使img元素绝对定位，left:50%，margin-left: -width/2
 
 ##### 7.$element.data()
 
 一个函数，专门用于取元素上的自定义属性data-xxx
 
 函数参数：我们要取的属性名称，即xxx
+
+##### 8.左边自适应宽度右边固定宽度
+
+右边元素浮动，左边的margin-right的值为左边元素的宽，
+
+##### 9.移动端横向滚动
+
+​       1.要给ul加一个容器，这个容器有横向滚动条
+
+​             overflow-x: scroll;
+
+​        2.动态设置ul的宽度，宽度是根据内容大小决定的
+
+​            把ul 中内容 的宽度都加起来，比总宽度更宽一点，防止意外
 
 #### 媒体查询
 

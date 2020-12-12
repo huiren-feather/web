@@ -147,7 +147,7 @@
     </section>
     <!-- /轮播图 -->
     <!-- 特色介绍 -->
-    <section id="special">
+    <section id="special" class="hidden-xs">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-md-4 hidden-xs">
@@ -233,23 +233,468 @@
     </section>
     <!-- /特色介绍 -->
     <!-- 立即预约 -->
-    <section id="appoint" class="hidden-xs">
+    <section id="appoint">
         <div class="container">
             <p class="pull-left"><i class="icon-uniE906"></i>现在有<span>458</span> 人在排队，累计预约交易成功 <span>458</span> 次。 什么是预约投标？><a href="">立即预约</a></p>
-            <p class="pull-right hidden-sm"><i class="icon-uniE905"></i><a href="javascript:void(0)">微金所企业宣传片</a></p>
+            <p class="pull-right hidden-xs hidden-sm"><i class="icon-uniE905"></i><a href="javascript:void(0)">微金所企业宣传片</a></p>
         </div>
     </section>
     <!-- /立即预约 -->
     <!-- 产品推荐 -->
     <section id="products">
+        <div class="container">
+            <!-- 
+                1.要给ul加一个容器，这个容器有横向滚动条
+                2.动态设置ul的宽度，宽度是根据内容大小决定的
+                width=sum（li.width）
+             -->
+            <div class="ul-wapper">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#introduce" aria-controls="introduce" role="tab" data-toggle="tab">特别推荐</a></li>
+                    <li role="presentation"><a href="#invest" aria-controls="invest" role="tab" data-toggle="tab">微投资</a></li>
+                    <li role="presentation"><a href="#baby" aria-controls="baby" role="tab" data-toggle="tab">微小宝</a></li>
+                    <li role="presentation"><a href="#consume" aria-controls="consume" role="tab" data-toggle="tab">微消费</a></li>
+                    <li role="presentation"><a href="#profit" aria-controls="profit" role="tab" data-toggle="tab">  微增利</a></li>
+                    <li role="presentation"><a href="#kim" aria-controls="kim" role="tab" data-toggle="tab">微金宝</a></li>
+                    <li role="presentation"><a href="#transfer" aria-controls="transfer" role="tab" data-toggle="tab">微转让</a></li>
+                    <li class="pull-right hidden-xs"><a href="javascript:;">更多</a></li>
+                </ul>
+            </div>
 
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="introduce">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6 col-lg-4">
+                            <div class="panel panel-yhh active">
+                                <div class="panel-heading">
+                                    <p>
+                                        <strong>8</strong>
+                                        <sub>%</sub>
+                                        <br>
+                                        <span>年利率</span>
+                                    </p>
+                                </div>
+                                <div class="panel-body">
+                                    <h5>新手体验标00001期</h5>
+                                    <div class="row">
+                                        <div class="col-xs-6 text-left">
+                                            <p>起始金额</p>
+                                            <p>
+                                                <strong>1000.00</strong>
+                                                <sub>万</sub>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-6 text-right">
+                                            <p>起始金额</p>
+                                            <p>
+                                                <strong>1000.00</strong>
+                                                <sub>万</sub>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-6 text-left">
+                                            <p>起始金额</p>
+                                            <p>
+                                                <strong>1000.00</strong>
+                                                <sub>万</sub>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-6 text-right">
+                                            <p>起始金额</p>
+                                            <p>
+                                                <strong>1000.00</strong>
+                                                <sub>万</sub>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-4">
+                            <div class="panel panel-yhh disabled">
+                                <div class="panel-heading">
+                                    <p>
+                                        <strong>8</strong>
+                                        <sub>%</sub>
+                                        <br>
+                                        <span>年利率</span>
+                                    </p>
+                                </div>
+                                <div class="panel-body">
+                                    <h5>新手体验标00001期</h5>
+                                    <div class="row">
+                                        <div class="col-xs-6 text-left">
+                                            <p>起始金额</p>
+                                            <p>
+                                                <strong>1000.00</strong>
+                                                <sub>万</sub>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-6 text-right">
+                                            <p>起始金额</p>
+                                            <p>
+                                                <strong>1000.00</strong>
+                                                <sub>万</sub>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-6 text-left">
+                                            <p>起始金额</p>
+                                            <p>
+                                                <strong>1000.00</strong>
+                                                <sub>万</sub>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-6 text-right">
+                                            <p>起始金额</p>
+                                            <p>
+                                                <strong>1000.00</strong>
+                                                <sub>万</sub>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-4">
+                            <div class="panel panel-yhh ">
+                                <div class="panel-heading">
+                                    <p class="tooltips">
+                                        <a class="badge badge-one" data-toggle="tooltip" data-placement="top" title="北京市" href="javascript:;">京</a>
+                                        <a class="badge badge-two" data-toggle="tooltip" data-placement="top" title="上海市" href="javascript:;">沪</a>
+                                    </p>
+                                    <p>
+                                        <strong>8</strong>
+                                        <sub>%</sub>
+                                        <br>
+                                        <span>年利率</span>
+                                    </p>
+                                </div>
+                                <div class="panel-body">
+                                    <h5>新手体验标00001期</h5>
+                                    <div class="row">
+                                        <div class="col-xs-6 text-left">
+                                            <p>起始金额</p>
+                                            <p>
+                                                <strong>1000.00</strong>
+                                                <sub>万</sub>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-6 text-right">
+                                            <p>起始金额</p>
+                                            <p>
+                                                <strong>1000.00</strong>
+                                                <sub>万</sub>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-6 text-left">
+                                            <p>起始金额</p>
+                                            <p>
+                                                <strong>1000.00</strong>
+                                                <sub>万</sub>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-6 text-right">
+                                            <p>起始金额</p>
+                                            <p>
+                                                <strong>1000.00</strong>
+                                                <sub>万</sub>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-4">
+                            <div class="panel panel-yhh ">
+                                <div class="panel-heading">
+                                    <p>
+                                        <strong>8</strong>
+                                        <sub>%</sub>
+                                        <br>
+                                        <span>年利率</span>
+                                    </p>
+                                </div>
+                                <div class="panel-body">
+                                    <h5>新手体验标00001期</h5>
+                                    <div class="row">
+                                        <div class="col-xs-6 text-left">
+                                            <p>起始金额</p>
+                                            <p>
+                                                <strong>1000.00</strong>
+                                                <sub>万</sub>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-6 text-right">
+                                            <p>起始金额</p>
+                                            <p>
+                                                <strong>1000.00</strong>
+                                                <sub>万</sub>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-6 text-left">
+                                            <p>起始金额</p>
+                                            <p>
+                                                <strong>1000.00</strong>
+                                                <sub>万</sub>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-6 text-right">
+                                            <p>起始金额</p>
+                                            <p>
+                                                <strong>1000.00</strong>
+                                                <sub>万</sub>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-4">
+                            <div class="panel panel-yhh ">
+                                <div class="panel-heading">
+                                    <p>
+                                        <strong>8</strong>
+                                        <sub>%</sub>
+                                        <br>
+                                        <span>年利率</span>
+                                    </p>
+                                </div>
+                                <div class="panel-body">
+                                    <h5>新手体验标00001期</h5>
+                                    <div class="row">
+                                        <div class="col-xs-6 text-left">
+                                            <p>起始金额</p>
+                                            <p>
+                                                <strong>1000.00</strong>
+                                                <sub>万</sub>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-6 text-right">
+                                            <p>起始金额</p>
+                                            <p>
+                                                <strong>1000.00</strong>
+                                                <sub>万</sub>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-6 text-left">
+                                            <p>起始金额</p>
+                                            <p>
+                                                <strong>1000.00</strong>
+                                                <sub>万</sub>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-6 text-right">
+                                            <p>起始金额</p>
+                                            <p>
+                                                <strong>1000.00</strong>
+                                                <sub>万</sub>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-4">
+                            <div class="panel panel-yhh ">
+                                <div class="panel-heading">
+                                    <p>
+                                        <strong>8</strong>
+                                        <sub>%</sub>
+                                        <br>
+                                        <span>年利率</span>
+                                    </p>
+                                </div>
+                                <div class="panel-body">
+                                    <h5>新手体验标00001期</h5>
+                                    <div class="row">
+                                        <div class="col-xs-6 text-left">
+                                            <p>起始金额</p>
+                                            <p>
+                                                <strong>1000.00</strong>
+                                                <sub>万</sub>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-6 text-right">
+                                            <p>起始金额</p>
+                                            <p>
+                                                <strong>1000.00</strong>
+                                                <sub>万</sub>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-6 text-left">
+                                            <p>起始金额</p>
+                                            <p>
+                                                <strong>1000.00</strong>
+                                                <sub>万</sub>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-6 text-right">
+                                            <p>起始金额</p>
+                                            <p>
+                                                <strong>1000.00</strong>
+                                                <sub>万</sub>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="invest">微投资</div>
+                <div role="tabpanel" class="tab-pane" id="baby">微小宝</div>
+                <div role="tabpanel" class="tab-pane" id="consume">微消费</div>
+                <div role="tabpanel" class="tab-pane" id="invest"> 微增利</div>
+                <div role="tabpanel" class="tab-pane" id="kim">微金宝</div>
+                <div role="tabpanel" class="tab-pane" id="transfer"> 微转让</div>
+            </div>
+        </div>
     </section>
     <!-- /产品推荐 -->
     <!-- 新闻列表 -->
-    <section></section>
+    <section id="news">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2 col-sm-offset-2">
+                    <div class="news-title">
+                        全部新闻
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li role="presentation" class="active">
+                            <a data-title="全部新闻" href="#news01" data-toggle="tab">
+                                <i class="icon-news01">
+
+                                </i>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a data-title="媒体新闻" href="#news02" data-toggle="tab">
+                                <i class="icon-news02">
+
+                                </i>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a data-title="行业咨询" href="#news03" data-toggle="tab">
+                                <i class="icon-news03">
+
+                                </i>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a data-title="原来新闻" href="#news04" data-toggle="tab">
+                                <i class="icon-news04">
+
+                                </i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6">
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="news01">
+                            <ul>
+                                <li>微金所发憷了呵呵呵</li>
+                                <li>微金所发憷了呵呵呵</li>
+                                <li>微金所发憷了呵呵呵</li>
+                                <li>微金所发憷了呵呵呵</li>
+                                <li>微金所发憷了呵呵呵</li>
+                                <li>微金所发憷了呵呵呵</li>
+                                <li>微金所发憷了呵呵呵</li>
+                                <li>微金所发憷了呵呵呵</li>
+                                <li>微金所发憷了呵呵呵</li>
+                                <li>微金所发憷了呵呵呵</li>
+                            </ul>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade " id="news02">
+                            <ul>
+                                <li>微金所发憷了想多了</li>
+                                <li>微金所发憷了想多了</li>
+                                <li>微金所发憷了想多了</li>
+                                <li>微金所发憷了想多了</li>
+                                <li>微金所发憷了想多了</li>
+                                <li>微金所发憷了想多了</li>
+                                <li>微金所发憷了想多了</li>
+                                <li>微金所发憷了想多了</li>
+                                <li>微金所发憷了想多了</li>
+                                <li>微金所发憷了想多了</li>
+                            </ul>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade " id="news03">
+                            <ul>
+                                <li>微金所发钱了啊啊啊啊呵呵呵</li>
+                                <li>微金所发钱了啊啊啊啊呵呵呵</li>
+                                <li>微金所发钱了啊啊啊啊呵呵呵</li>
+                                <li>微金所发钱了啊啊啊啊呵呵呵</li>
+                                <li>微金所发钱了啊啊啊啊呵呵呵</li>
+                                <li>微金所发钱了啊啊啊啊呵呵呵</li>
+                                <li>微金所发钱了啊啊啊啊呵呵呵</li>
+                                <li>微金所发钱了啊啊啊啊呵呵呵</li>
+                                <li>微金所发钱了啊啊啊啊呵呵呵</li>
+                                <li>微金所发钱了啊啊啊啊呵呵呵</li>
+                            </ul>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade " id="news04">
+                            <ul>
+                                <li>微金所发潜力了呵呵呵</li>
+                                <li>微金所发潜力了呵呵呵</li>
+                                <li>微金所发潜力了呵呵呵</li>
+                                <li>微金所发潜力了呵呵呵</li>
+                                <li>微金所发潜力了呵呵呵</li>
+                                <li>微金所发潜力了呵呵呵</li>
+                                <li>微金所发潜力了呵呵呵</li>
+                                <li>微金所发潜力了呵呵呵</li>
+                                <li>微金所发潜力了呵呵呵</li>
+                                <li>微金所发潜力了呵呵呵</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- /新闻列表 -->
     <!-- 合作伙伴 -->
-    <section></section>
+    <section id="partners">
+        <div class="container">
+            <h3>合作伙伴</h3>
+            <ul>
+                <li>
+                    <a href="javascript:;"><i class="icon-uniE930"></i></a>
+                </li>
+                <li>
+                    <a href="javascript:;"><i class="icon-uniE930"></i></a>
+                </li>
+                <li>
+                    <a href="javascript:;"><i class="icon-uniE930"></i></a>
+                </li>
+                <li>
+                    <a href="javascript:;"><i class="icon-uniE930"></i></a>
+                </li>
+                <li>
+                    <a href="javascript:;"><i class="icon-uniE930"></i></a>
+                </li>
+                <li>
+                    <a href="javascript:;"><i class="icon-uniE930"></i></a>
+                </li>
+                <li>
+                    <a href="javascript:;"><i class="icon-uniE930"></i></a>
+                </li>
+                <li>
+                    <a href="javascript:;"><i class="icon-uniE930"></i></a>
+                </li>
+                <li>
+                    <a href="javascript:;"><i class="icon-uniE930"></i></a>
+                </li>
+            </ul>
+        </div>
+    </section>
     <!-- /合作伙伴 -->
 
     <!-- 脚注 -->

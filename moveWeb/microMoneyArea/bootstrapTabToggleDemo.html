@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/Bootstrap-3.3.6/css/bootstrap.css">
+</head>
+
+<body>
+    <h2>css组件</h2>
+
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#profile" data-toggle="tab">Profile</a></li>
+        <li role="presentation"><a href="#">Messages</a></li>
+    </ul>
+    <h2>js组件</h2>
+    <!-- Nav tabs -->
+    <!-- role属性，aria-xxxx属性，只是和语义有关系，和功能没关系 -->
+    <!-- data-toggle="tab" 提供了切换功能，在JS组件中 -->
+    <!-- 切换pane是通过a标签的id -->
+    <!-- 结论：样式和功能没有关系 -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="home">0</div>
+        <div role="tabpanel" class="tab-pane" id="profile">1</div>
+        <div role="tabpanel" class="tab-pane" id="messages">...</div>
+        <div role="tabpanel" class="tab-pane" id="settings">...</div>
+    </div>
+
+
+    <a href="#">Home</a>
+    <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a>
+
+    <script src="lib/jquery-2.1.4/jquery.js"></script>
+    <script src="lib/Bootstrap-3.3.6/js/bootstrap.js"></script>
+</body>
+
+</html>

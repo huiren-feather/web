@@ -165,21 +165,28 @@
 ## 基础CSS样式
 
 - [概要](http://v3.bootcss.com/css/#overview)
+    
     + 
 - [预置排版样式](http://v3.bootcss.com/css/#type)
     + 统一预制标签样式
     + 
 - [按钮样式](http://v3.bootcss.com/css/#buttons)
+    
     + 
 - [表格样式](http://v3.bootcss.com/css/#tables)
+    
     + 
 - [表单样式](http://v3.bootcss.com/css/#forms)
+    
     + 
 - [图片样式](http://v3.bootcss.com/css/#images)
+    
     + 
 - [辅助工具类](http://v3.bootcss.com/css/#helper-classes)
+    
     + 
 - [代码样式](http://v3.bootcss.com/css/#code)
+    
     + 
 - [栅格系统](http://v3.bootcss.com/css/#grid)
     + __xs__ : 超小屏幕 手机 (<768px)  
@@ -188,7 +195,10 @@
     + __lg__ : 大屏幕 大桌面显示器 (≥1200px)
 - [响应式工具类](http://v3.bootcss.com/css/#responsive-utilities)
     + __hidden-xx__ : 在某种屏幕下隐藏 
+    
     + __visible-xx__ : 在某种屏幕尺寸下显示
+    
+      
 
 ## 预置界面组件
 
@@ -221,7 +231,7 @@
 ### 如何使用Javascript插件
 
 ### 内置组件
-    
+
 - [模态对话框](http://v3.bootcss.com/javascript/#modals)
 - [下拉菜单](http://v3.bootcss.com/javascript/#dropdowns)
 - [滚动监听](http://v3.bootcss.com/javascript/#scrollspy)
