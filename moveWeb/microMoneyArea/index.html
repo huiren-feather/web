@@ -71,14 +71,14 @@
                     </div>
                     <div class="col-md-3 text-center ">
                         <a href="" class="btn btn-yhh  btn-sm ">免费注册</a>
-                        <a href="" class="btn btn-link btn-sm ">登录</a>
+                        <a href="" class="btn btn-link btn-sm  " data-toggle="modal" data-target="#login_form">登录</a>
                     </div>
                 </div>
 
             </div>
         </div>
         <!-- 导航条 -->
-        <nav class="navbar navbar-itcast navbar-static-top">
+        <nav class="navbar navbar-itcast navbar-static-top" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav_list" aria-expanded="false">
@@ -661,10 +661,10 @@
     </section>
     <!-- /新闻列表 -->
     <!-- 合作伙伴 -->
-    <section id="partners">
-        <div class="container">
+    <section id="partners" class="hidden-sm hidden-xs">
+        <div class="container text-center">
             <h3>合作伙伴</h3>
-            <ul>
+            <ul class='center-block'>
                 <li>
                     <a href="javascript:;"><i class="icon-uniE930"></i></a>
                 </li>
@@ -700,7 +700,51 @@
     <!-- 脚注 -->
     <footer></footer>
     <!--/脚注  -->
-
+    <!-- Modal -->
+    <div class="modal fade" id="login_form" tabindex="-1" role="dialog" aria-labelledby="login_form_title">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="login_form_title">登录</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                    <label>
+                                <input type="checkbox"> Remember me
+                              </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-default">Sign in</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save </button>
+                </div> -->
+            </div>
+        </div>
+    </div>
     <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
     <script src="lib/jquery-2.1.4/jquery.js"></script>
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->

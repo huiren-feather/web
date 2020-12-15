@@ -6,6 +6,9 @@
 
 */
 
+// 定义变量
+@mainColor: #F75B23;
+
 
 /* 扩展样式，生成Bootstrapcss按钮样式 */
 
@@ -15,8 +18,8 @@
 .btn-yhh.active,
 .open .dropdown-toggle.btn-yhh {
     color: #ffffff;
-    background-color: #F75B23;
-    border-color: #F75B23;
+    background-color: @mainColor;
+    border-color: @mainColor;
 }
 
 .btn-yhh:active,
@@ -40,12 +43,12 @@ fieldset[disabled] .btn-yhh:active,
 .btn-yhh.disabled.active,
 .btn-yhh[disabled].active,
 fieldset[disabled] .btn-yhh.active {
-    background-color: #F75B23;
-    border-color: #F75B23;
+    background-color: @mainColor;
+    border-color: @mainColor;
 }
 
 .btn-yhh .badge {
-    color: #F75B23;
+    color: @mainColor;
     background-color: #ffffff;
 }
 
@@ -159,7 +162,7 @@ header .mobile-link:hover img {
 
 header .icon-icon {
     font-size: 50px;
-    color: #F75B23;
+    color: @mainColor;
     line-height: 50px;
     vertical-align: middle;
 }
@@ -215,7 +218,7 @@ header .problems:link,
 .navbar-itcast .navbar-nav>li>a:focus {
     color: #333;
     background-color: transparent;
-    border-bottom: 2px solid #F75B23;
+    border-bottom: 2px solid @mainColor;
 }
 
 .navbar-itcast .navbar-nav>.active>a,
@@ -223,7 +226,7 @@ header .problems:link,
 .navbar-itcast .navbar-nav>.active>a:focus {
     color: #555;
     background-color: transparent;
-    border-bottom: 2px solid #F75B23;
+    border-bottom: 2px solid @mainColor;
 }
 
 .navbar-itcast .navbar-nav>.disabled>a,
@@ -320,8 +323,8 @@ header .container .login {
 
 .btn-yhh {
     color: #ffffff;
-    background-color: #F75B23;
-    border-color: #F75B23;
+    background-color: @mainColor;
+    border-color: @mainColor;
 }
 
 
@@ -454,7 +457,7 @@ span {
 }
 
 .panel-yhh.active {
-    background-color: #F75B23;
+    background-color: @mainColor;
     color: #fff;
 }
 

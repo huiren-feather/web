@@ -48,6 +48,25 @@
     <div>1234</div>
     <div>41234</div>
     <script>
+        var lis = document.getElementsByTagName("li");
+        var divs = document.getElementsByTagName("div");
+        console.log(lis);
+        console.log(divs);
+
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].setAttribute('index', i);
+            lis[i].addEventListener('click', function() {
+                for (var j = 0; j < lis.length; j++) {
+                    lis[j].className = '';
+                }
+                this.className = 'active';
+                for (var j = 0; j < divs.length; j++) {
+                    divs[j].className = '';
+                }
+                var index = this.getAttribute('index');
+                divs[index].className = 'current';
+            });
+        }
     </script>
 </body>
 

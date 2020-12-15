@@ -46,6 +46,16 @@ $(function() {
             $ulContainer.css('width', '100%').parent().css('overflow-x', 'hidden');
 
         }
+
+        // var $parUl = $('#partner>.container>ul');
+        // var $parI = $('#partner>.container>ul>li>a>i');
+        // console.log($parI);
+        // console.log($parUl.width());
+        // if ($parUl.width() <= 998) {
+        //     console.log(50 * $parUl.width() / 998);
+        //     $parI.css('fontSize', 50 * $parUl.width() / 998 + 'px')
+        // }
+
     }
     // .on('resize', resize) 屏幕变化，执行函数
     // .trigger('resize'); 屏幕加载后立即触发一次事件
@@ -63,8 +73,67 @@ $(function() {
         var title = $this.data('title');
         // 将title设置到相应的位置
         $newTitle.html(title);
+    });
+
+    // 1.获取手指在轮播图上的滑动方向（左右即可）
+    // 方法二：
+    // a.获取界面上轮播图容器
+
+    var $carousel = $('.carousel');
+    var startX;
+    var endX;
+    var offsetX = 30;
+    //b.注册滑动事件
+    // 手指初始触摸时的坐标
+    $carousel.on('touchstart', function(e) {
+        startX = e.originalEvent.touches[0].clientX;
+    });
+    // 手指离开时的坐标
+    $carousel.on('touchmove', function(e) {
+        // console.log(e);
+        endX = e.originalEvent.touches[0].clientX;
+
+    });
+    $carousel.on('touchend', function(e) {
+
+        // 控制精度
+        // 获取每次运动的距离，当距离大于一定值时认为方向有变化
+        var distanceX = endX - startX;
+        if (Math.abs(distanceX) > offsetX) {
+            // if (distanceX > 0) {
+            //     $('.glyphicon-chevron-left').click();
+            // } else {
+            //     $('.glyphicon-chevron-right').click();
+            // }
+            // 2.根据获得的方向，选择上一张或下一张
+            $(this).carousel(startX > endX ? 'next' : 'prev');
+        }
 
 
     });
+
+    /* 方法一：
+     //获取接触屏幕时的X和Y
+     $('#main_ad').bind('touchstart', function(e) {
+         startX = e.originalEvent.changedTouches[0].pageX,
+             startY = e.originalEvent.changedTouches[0].pageY;
+     });
+     $('#main_ad').bind('touchmove', function(e) {
+         //获取滑动屏幕时的X,Y
+         endX = e.originalEvent.changedTouches[0].pageX,
+             endY = e.originalEvent.changedTouches[0].pageY;
+         //获取滑动距离
+         distanceX = endX - startX;
+         distanceY = endY - startY;
+         //判断滑动方向
+         if (Math.abs(distanceX) > Math.abs(distanceY) && distanceX > 0) {
+             $('.glyphicon-chevron-left').click();
+
+         } else if (Math.abs(distanceX) > Math.abs(distanceY) && distanceX < 0) {
+             $('.glyphicon-chevron-right').click();
+         }
+
+     });
+     */
 
 });

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <style>
+        .container {
+            margin: 0 auto;
+            padding: 0;
+            width: 721px;
+            height: 455px;
+            position: relative;
+        }
+        
+        .left {
+            float: left;
+        }
+        
+        .right {
+            float: right;
+        }
+        
+        .circle {
+            position: absolute;
+        }
+        
+        .circle li {
+            width: 15px;
+            height: 15px;
+            border-radius: 5%;
+            list-style: none;
+            background-color: #fff;
+        }
+        
+        a {
+            display: block;
+        }
+        
+        img {
+            float: left;
+            /* position: absolute; */
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <a href="javascript:;"><img src="images/focus.jpg" alt=""></a>
+        <div class='leftSlide left'>
+            < </div>
+                <div class='leftSlide right'>></div>
+                <ul class='circle'>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+
+
+        </div>
+</body>
+
+</html>
