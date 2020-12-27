@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    canvas {
+        border: 1px solid #ddd;
+    }
+</style>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+    <script>
+        var myCanvas = document.querySelector('canvas');
+        var ctx = myCanvas.getContext('2d');
+
+        // 1.体验曲线的绘制
+        // 2.线是由点构成的
+        // 3.曲线可以由数学公式得来
+
+        // 公式：y=2x
+        // 遍历  
+        ctx.beginPath();
+        ctx.moveTo(0, 0); //居然不需要这个也行
+        for (var i = 1; i < 600; i++) {
+            var x = i;
+            var y = 2 * x;
+            // 
+            ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+        // 公式：y=x^2
+        // 遍历  
+        ctx.beginPath();
+        ctx.moveTo(0, 0); //居然不需要这个也行
+        for (var i = 1; i < 600; i++) {
+            var x = i / 10;
+            var y = Math.pow(x, 2);
+            // 
+            ctx.lineTo(i, y);
+        }
+        ctx.stroke();
+        // 公式：y=sin(x)
+        ctx.beginPath();
+        ctx.moveTo(0, 0); //居然不需要这个也行
+        for (var i = 1; i < 600; i++) {
+            var x = i / 10;
+            var y = Math.sin(x);
+            // 
+            ctx.lineTo(x * 10, y * 30 + 100);
+        }
+        ctx.stroke();
+    </script>
+</body>
+
+</html>

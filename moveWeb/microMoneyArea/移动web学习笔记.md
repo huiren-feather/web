@@ -183,3 +183,24 @@ F12 ----sources----filesystem----+-----右键----add folder to workspace----同�
 
 功能：添加变量，嵌套语法，混合语法（Mixin）
 
+#### less安装
+
+1.去官网下载Node.js,并安装
+
+2.配置环境变量到安装目录
+
+3.重启Windows资源管理器（重启电脑也可）
+
+4.在安装目录下运行终端，输入命令：npm install -g less
+
+5.能在C:\Users\yuan-honghui\AppData\Roaming\npm下看的三个文件：node_modules文件夹，lessc，lessc.cmd
+
+6.成功标志：在终端输入：lessc -version 能看到版本
+
+##### 切换盘符
+
+ D:
+
+##### 自定义Bootstrap
+
+修改less文件，生成css文件。

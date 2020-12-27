@@ -33,3 +33,28 @@ body {
         }
     }
 }
+
+/* 定义一个类 */
+// 定义一个代码段，（）里的内容是参数，参数后的是默认值（没有传参数就是用缺省值）
+.roundedCorners(@radius: 5px) {
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+    border-radius: @radius;
+  }
+  /* 定义的类应用到另个一个类中 */
+  ＃header {
+    .roundedCorners();
+  }
+  #footer {
+    .roundedCorners(10px);
+  }
+
+
+//   
+
+@import url("_p.less") ;
+
+body {
+    background-color: lighten(#000,10%);
+    color:darken(#fff,10%);
+}

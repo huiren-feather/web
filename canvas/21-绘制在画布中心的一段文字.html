@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    canvas {
+        border: 1px solid #ddd;
+    }
+</style>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+    <script>
+        var myCanvas = document.querySelector('canvas');
+        var ctx = myCanvas.getContext('2d');
+        // 在画布中心绘制一段文字
+        // 1.声明一段文字
+        var str = '你好，我是大逗逼';
+        // 2.确定画布中心
+        var w = ctx.canvas.width;
+        var h = ctx.canvas.height;
+        // 画一个十字架
+        ctx.beginPath();
+        ctx.moveTo(0, h / 2 - 0.5);
+        ctx.lineTo(w, h / 2 - 0.5);
+        ctx.moveTo(w / 2 - 0.5, 0);
+        ctx.lineTo(w / 2 - 0.5, h);
+        ctx.stroke();
+
+        //绘制文本
+        var x0 = w / 2;
+        var y0 = h / 2;
+        // 注：起点位置在文字的左下角，且基线对齐
+        // 文本属性：
+        // font：尺寸，字体
+        ctx.font = '30px Microsoft YaHei';
+        // 左右对齐方式,基于起点坐标对齐
+        // textAlign:左（默认left），右（right），中心（center），start，end
+        ctx.textAlign = 'right';
+        // 描边文字
+        ctx.strokeText(str, x0, y0);
+        // 填充文字
+        ctx.fillText(str, 100, 100);
+    </script>
+</body>
+
+</html>

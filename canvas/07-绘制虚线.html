@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    canvas {
+        border: 1px solid #ddd;
+    }
+</style>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+    <script>
+        var myCanvas = document.querySelector('canvas');
+        var ctx = myCanvas.getContext('2d');
+        // 画平行线
+        ctx.moveTo(100, 100.5);
+        ctx.lineTo(300, 100.5);
+
+
+        //  setLineDash()描述虚线
+        // 参数是数组，描述排列方式
+        // [5],实线5，虚线5
+        // [5,10],实线5，虚线10
+        // 顺序描述排列，虚实相间
+        ctx.setLineDash([5, 10, 20]);
+        //getLineDash() 获取虚线的排列方式,获取的是不重复的那一段排列方式
+        console.log(ctx.getLineDash());
+        // lineDashOffset 设置虚线的偏移量（正值向左，向上；负值向右向下）
+        ctx.lineDashOffset = 20;
+        ctx.stroke();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    canvas {
+        border: 1px solid #ddd;
+    }
+</style>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+    <script>
+        var myCanvas = document.querySelector('canvas');
+        var ctx = myCanvas.getContext('2d');
+        // 1.绘制两个正方形，一大一小，嵌套
+        ctx.moveTo(100, 100);
+        ctx.lineTo(300, 100);
+        ctx.lineTo(300, 300);
+        ctx.lineTo(100, 300);
+        ctx.closePath();
+
+        // 逆时针
+
+        // 非零环绕规则
+        // 1.看一块区域是否填充
+        // 2.从这个区域拉一条直线
+        // 3.看和这条直线相交的轨迹
+        // 4.如果是顺时针的轨迹+1，逆时针-1
+        // 5.计算总和
+        // 6.如果是非0，那么该区域填充；是0，不填充
+        // 注；操作中，肯定选最少的线的那一面
+        ctx.moveTo(150, 150);
+        ctx.lineTo(150, 250);
+        ctx.lineTo(250, 250);
+
+        ctx.lineTo(250, 150);
+        // ctx.lineTo(150, 150);
+        ctx.closePath();
+
+        ctx.fillStyle = 'red';
+        ctx.fill();
+
+        ctx.stroke();
+    </script>
+</body>
+
+</html>

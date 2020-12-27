@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    canvas {
+        border: 1px solid #ddd;
+    }
+</style>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+    <script>
+        var myCanvas = document.querySelector('canvas');
+        var ctx = myCanvas.getContext('2d');
+        // 1.绘制一个三角形
+        ctx.moveTo(100, 100);
+        ctx.lineTo(200, 100);
+        ctx.lineTo(200, 200);
+        //  问题：三角有缺口
+        // 起始点和lineto的结束点无法闭合
+        // 原因：线条的中线会对准刻度线
+        // 解决：使用canvas的自动闭合
+        // 关闭路径
+        ctx.closePath();
+
+        // ctx.lineTo(100, 100);
+
+        ctx.lineWidth = 10;
+        //描边
+        ctx.strokeStyle = 'blue';
+        ctx.stroke();
+        // 填充
+        ctx.fill();
+    </script>
+</body>
+
+</html>

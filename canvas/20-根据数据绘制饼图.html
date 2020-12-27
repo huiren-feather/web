@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+    <script>
+        var canvas = document.querySelector('canvas');
+        var ctx = canvas.getContext('2d');
+
+        // 1.根据37期的年龄，分布绘制饼图
+        // 2.准备统计数据
+        // 15-20  5
+        // 20-25  30
+        // 25-30  10
+        // 30-35  5
+        var data = [5, 30, 10, 5];
+        // 3.在饼图上表示出来
+        var r = 150;
+        // 4.把数据转成弧度
+        var angleList = [];
+        // 计算总量
+        var total = 0;
+        data.forEach(function(item, i) {
+            total += item;
+        });
+        console.log(total);
+        // 计算每个数据所占的弧度
+        data.forEach(function(item, i) {
+            var angle = Math.PI * 2 * item / total;
+            angleList[i] = angle;
+
+        });
+        var temp = 0;
+        console.log(angleList);
+        console.log(angleList.length);
+        // 绘图
+        // 随机颜色函数
+        function getRandomColor() {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            return 'rgb(' + r + ',' + g + ',' + b + ')';
+
+        }
+
+        for (var i = 0; i < angleList.length; i++) {
+            temp += (i == 0 ? 0 : angleList[i - 1]);
+            console.log(temp);
+            ctx.beginPath();
+            ctx.moveTo(ctx.canvas.width / 2, ctx.canvas.height / 2);
+            console.log(ctx.canvas.width / 2);
+            ctx.arc(ctx.canvas.width / 2, ctx.canvas.height / 2, r, temp, temp + angleList[i]);
+            ctx.closePath();
+            // ctx.stroke();
+            ctx.fillStyle = getRandomColor();
+            ctx.fill();
+        }
+    </script>
+</body>
+
+</html>

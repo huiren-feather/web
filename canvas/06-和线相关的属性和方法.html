@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    canvas {
+        border: 1px solid #ddd;
+    }
+</style>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+    <script>
+        var myCanvas = document.querySelector('canvas');
+        var ctx = myCanvas.getContext('2d');
+        // 画平行线
+        // 开启新路径原因：解决后面的描边对前面样式的覆盖问题
+        ctx.beginPath(); //开启新路径
+        // 蓝色 10px宽度
+        ctx.moveTo(100, 100);
+        ctx.lineTo(200, 50);
+
+
+        ctx.lineTo(300, 100);
+        // 修改描边颜色和宽度
+        ctx.strokeStyle = 'blue';
+        ctx.lineWidth = 10;
+        // lineCap：cap帽子，线末端类型
+        ctx.lineCap = 'butt'; //默认      
+        // lineJoin:相交线的拐点,控制拐点样式
+        ctx.lineJoin = 'miter'; //默认
+        ctx.stroke();
+
+        ctx.beginPath(); //开启新路径
+        // 红色20px宽度
+        ctx.moveTo(100, 200);
+
+        ctx.lineTo(200, 150);
+
+        ctx.lineTo(300, 200);
+        ctx.strokeStyle = 'red';
+        ctx.lineWidth = 20;
+        ctx.lineCap = 'round'; //环绕
+        ctx.lineJoin = 'round'; //圆弧
+        ctx.stroke();
+
+        ctx.beginPath(); //开启新路径
+        // 绿色30px宽度
+        ctx.moveTo(100, 300);
+        ctx.lineTo(200, 250);
+
+        ctx.lineTo(300, 300);
+        ctx.strokeStyle = 'green';
+        ctx.lineWidth = 30;
+        ctx.lineCap = 'square'; //方向
+        ctx.lineJoin = 'bevel'; //斜面
+        ctx.stroke();
+    </script>
+</body>
+
+</html>

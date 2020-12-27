@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    canvas {
+        border: 1px solid #ddd;
+    }
+</style>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+    <script>
+        var myCanvas = document.querySelector('canvas');
+        var ctx = myCanvas.getContext('2d');
+
+        // 1.什么是弧度
+        // 弧长对应的圆心角的角度，一个圆是2π
+        // 2.一个弧度怎么描述
+        // 弧长等于半径的弧，其所对的圆心角为1弧度
+        // 3.一弧度有多长
+        // 半径长度
+        // 一个角度=π/180
+
+        // 在中心位置绘制一个半径为150PX的六等份颜色随机的圆
+        var canvasWidth = ctx.canvas.width;
+        var canvasHeight = ctx.canvas.height;
+
+        var num = 10;
+        var angle = Math.PI * 2 / num;
+        for (var i = 0; i < num; i++) {
+            ctx.beginPath();
+            ctx.moveTo(canvasWidth / 2, canvasHeight / 2);
+            ctx.arc(canvasWidth / 2, canvasHeight / 2, 150, angle * i, angle * (i + 1));
+            ctx.closePath();
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            console.log(r, g, b);
+            ctx.strokeStyle = 'blue';
+            ctx.stroke();
+            ctx.fillStyle = 'rgb(' + r + ',' + g + ',' + b + ')'
+            console.log('rgb(' + r + ',' + g + ',' + b + ')');
+            ctx.fill();
+        }
+
+        // ctx.fill();
+        // ctx.stroke();
+    </script>
+</body>
+
+</html>

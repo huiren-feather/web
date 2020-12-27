@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    canvas {
+        border: 1px solid #ddd;
+    }
+</style>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+    <script>
+        var myCanvas = document.querySelector('canvas');
+        var ctx = myCanvas.getContext('2d');
+        // 绘制矩形路径 不是独立路径，没有beginPath；
+        ctx.rect(100, 100, 200, 100);
+
+        ctx.stroke();
+        ctx.fillStyle = 'red';
+        ctx.fill();
+
+        // 绘制矩形，有独立路径,描边
+        ctx.strokeRect(200, 200, 150, 150);
+        // 绘制矩形，有独立路径,填充
+        ctx.fillRect(200, 200, 55, 50);
+        // 清除矩形区域
+        ctx.clearRect(0, 0, 150, 150);
+    </script>
+</body>
+
+</html>

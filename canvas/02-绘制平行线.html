@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    canvas {
+        border: 1px solid #ddd;
+    }
+</style>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+    <script>
+        var myCanvas = document.querySelector('canvas');
+        var ctx = myCanvas.getContext('2d');
+        // 画平行线
+        ctx.moveTo(100, 100.5);
+        ctx.lineTo(300, 100.5);
+
+        ctx.moveTo(100, 200);
+        ctx.lineTo(300, 200);
+
+        ctx.stroke();
+
+        // 关于线条的问题
+        // 1.默认的宽度是多少 1px ，但看起来有2px
+        // 线条的中线会对准刻度线，会把线分成0.5px,显示的时候回不饱和,实际占了两格，并且边缘会颜色变浅
+        // 解决方案：前后移动0.5px
+        // 2.默认的颜色是什么 黑色  但实际上是#7f7f7f，灰色
+    </script>
+</body>
+
+</html>

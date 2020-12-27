@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    canvas {
+        border: 1px solid #ddd;
+    }
+</style>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+    <script>
+        var myCanvas = document.querySelector('canvas');
+        var ctx = myCanvas.getContext('2d');
+
+        // 1.什么是弧度
+        // 弧长对应的圆心角的角度，一个圆是2π
+        // 2.一个弧度怎么描述
+        // 弧长等于半径的弧，其所对的圆心角为1弧度
+        // 3.一弧度有多长
+        // 半径长度
+        // 一个角度=π/180
+
+        // 绘制圆弧
+        // 1.确定圆心 坐标x,y
+        // 2.确定圆的半径
+        // 3.确定起始位置和结束位置，确定弧的长度和位置 startAngle endAngle,以X轴方向为0度
+        // 4.确定绘制的方向，direction：顺时针（默认）：false；逆时针：true
+
+        // 在中心位置画一个半径为150px的圆弧右下角
+        ctx.arc(ctx.canvas.width / 2, ctx.canvas.height / 2, 150, Math.PI / 2, Math.PI, true);
+        ctx.stroke();
+    </script>
+</body>
+
+</html>

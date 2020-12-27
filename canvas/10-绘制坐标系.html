@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    canvas {
+        border: 1px solid #ddd;
+    }
+</style>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+    <script>
+        var myCanvas = document.querySelector('canvas');
+        var ctx = myCanvas.getContext('2d');
+
+        // 绘制坐标系
+        // 1.确定原点
+        // 2.确定原点到画布边缘的距离
+        // 3.确定坐标轴的长度
+        // 4.确定箭头大小，是个等腰三角形 10
+        // 5.绘制箭头填充
+
+        var space = 20;
+        var arrowSzie = 10;
+
+        // 计算原点
+        var canvasWidth = ctx.canvas.width;
+        var canvasHeight = ctx.canvas.height;
+        var x0 = space;
+        var y0 = canvasHeight - space;
+
+        // 绘制X轴
+        ctx.beginPath();
+        ctx.moveTo(x0, y0);
+        ctx.lineTo(canvasWidth - space, y0);
+        // X轴箭头
+        ctx.lineTo(canvasWidth - space - arrowSzie, canvasHeight - space + arrowSzie / 2);
+        ctx.lineTo(canvasWidth - space - arrowSzie, canvasHeight - space - arrowSzie / 2);
+        ctx.lineTo(canvasWidth - space, y0);
+        ctx.fill();
+        ctx.stroke();
+        // 绘制Y轴
+        ctx.beginPath();
+        ctx.moveTo(x0, y0);
+        ctx.lineTo(x0, space);
+        // Y轴箭头
+        ctx.lineTo(space + arrowSzie / 2, space + arrowSzie);
+        ctx.lineTo(space - arrowSzie / 2, space + arrowSzie);
+        ctx.lineTo(x0, space);
+        ctx.fill();
+        ctx.stroke();
+    </script>
+</body>
+
+</html>

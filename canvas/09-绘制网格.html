@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    canvas {
+        border: 1px solid #ddd;
+    }
+</style>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+    <script>
+        var myCanvas = document.querySelector('canvas');
+        var ctx = myCanvas.getContext('2d');
+        //绘制网格
+        // 1.网格的大小
+        var grid = 10;
+        // 2.画多少条X轴方向的线,横线的条数和高度有关系
+        var canvasHeight = myCanvas.height;
+        var canvasWidth = myCanvas.width;
+        console.log(canvasHeight);
+        // 获取画布宽度的方法
+        // a.myCanvas.width
+        // b.ctx.canvas.width
+
+        var xlineTotal = Math.floor(canvasHeight / grid);
+        for (var i = 0; i < xlineTotal; i++) {
+            ctx.beginPath();
+            ctx.moveTo(0, grid * i - 0.5);
+            ctx.lineTo(canvasWidth, grid * i - 0.5);
+
+
+            // ctx.setLineDash([5, 10]);
+            ctx.strokeStyle = '#eee';
+            ctx.stroke();
+        }
+        // 3.画多少条Y轴方向的线         
+        var ylineTotal = Math.floor(canvasWidth / grid);
+        for (var i = 0; i < ylineTotal; i++) {
+            ctx.beginPath();
+            ctx.moveTo(grid * i - 0.5, 0);
+            ctx.lineTo(grid * i - 0.5, canvasHeight);
+
+
+            // ctx.setLineDash([5, 10]);
+            ctx.strokeStyle = '#eee';
+            ctx.stroke();
+        }
+
+        // 4.遍历形式去画
+    </script>
+</body>
+
+</html>

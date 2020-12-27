@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 不建议在样式设置尺寸 -->
+</head>
+
+<body>
+    <!-- 1.准备画纸 -->
+    <!-- 画布是白色的，默认300x150 -->
+    <!-- 设置画布的大小 -->
+
+    <!-- 2.准备绘制工具 -->
+
+
+    <!-- 3.利用工具绘图 -->
+    <canvas id="tutorial" width="300" height="300"></canvas>
+    <script type="text/javascript">
+        function draw() {
+            var canvas = document.getElementById('tutorial');
+            if (!canvas.getContext) return;
+            var ctx = canvas.getContext("2d");
+            ctx.fillStyle = "rgb(200,0,0)";
+            //绘制矩形
+            ctx.fillRect(10, 10, 55, 50);
+
+            ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+            ctx.fillRect(30, 30, 55, 50);
+        }
+        draw();
+    </script>
+</body>
+
+</html>
