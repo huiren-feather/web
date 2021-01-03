@@ -40,11 +40,30 @@
         ctx.font = '30px Microsoft YaHei';
         // 左右对齐方式,基于起点坐标对齐
         // textAlign:左（默认left），右（right），中心（center），start，end
-        ctx.textAlign = 'right';
+         ctx.textAlign = 'center';
+
+        //  垂直对齐方式,基于起点坐标对齐，默认基线对齐：top,bottom,middle
+        ctx.textBaseline='middle';
+
+
         // 描边文字
         ctx.strokeText(str, x0, y0);
         // 填充文字
+        // ltr和rtl一般不会用到
+        // ctx.direction='ltr';
+
+
         ctx.fillText(str, 100, 100);
+
+
+        // 画一条下划线和文字一样长
+        ctx.beginPath();
+        // 获取文字的宽度
+        var width=ctx.measureText(str).width;
+        console.log(width);
+        ctx.moveTo(x0-width/2,y0+15.5);
+        ctx.lineTo(x0+width/2,y0+15.5);
+        ctx.stroke();
     </script>
 </body>
 
