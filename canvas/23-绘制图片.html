@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+</body>
+<script>
+    var myCanvas = document.querySelector('canvas');
+    var ctx = myCanvas.getContext('2d');
+
+    // 绘制图片的三种方式
+    // 1.加载图片到内存即可,不用展示到界面中
+
+    // var img = document.createElement("img");
+    // img.src = 'images/1.jpg';
+    // 1.创建对象
+    // 2.绑定加载完成事件
+    // 3.设置图片路径
+    var img = new Image();
+    // 如果onload放在src的后面，可能会导致函数不执行；因为图片已经加载完毕
+    img.onload = function() {
+        // 实现图片绘制
+        // 三种方式
+        // 1.drawImage(图片,x,y)起始坐标
+        ctx.drawImage(img, 0, 0);
+        console.log(img);
+        // 2.drawImage(img,x,y,width,height),图片大小（缩放）
+        ctx.drawImage(img, 0, 0, 300, 300);
+        // 3.drawImage(img,x,y,width,height,x1,y1,w1,h1)
+        // x,y,width,height:图片以原始尺寸展示时，截取图片上的一个矩形
+        // x1,y1,w1,h1：截取到的矩形，以这个位置尺寸来展示，并进行缩放
+        ctx.drawImage(img, 0, 0, 300, 300, 0, 0, 290, 290);
+    }
+    img.src = 'images/1.jpg';
+    // 必须等图片加载完毕，才能使用
+</script>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+</body>
+<script>
+    var myCanvas = document.querySelector('canvas');
+    var ctx = myCanvas.getContext('2d');
+
+
+    var img = new Image();
+
+    img.onload = function() {
+        // 图片加载完成
+        // 动态的获取当前图片的尺寸
+        // 计算出每个小人的尺寸
+        var imageWidth = img.width;
+        var imageHeight = img.height;
+        // 计算出人物的大小
+        var num = 4;
+        var personWidth = imageWidth / num;
+        var personHeight = imageHeight / num;
+
+        // 截取图片
+        var startX = 0;
+        var startY = 0;
+        var i = 0;
+
+        ctx.clearRect(0, 0, personWidth, personHeight);
+        ctx.drawImage(img, startX, startY, personWidth, personHeight, 0, 0, personWidth, personHeight);
+        startX = (i + 1) * personWidth;
+        console.log(i);
+        setInterval(function() {
+
+            if (i == num) {
+                i = 0;
+            }
+            startX = i * personWidth;
+            ctx.clearRect(0, 0, personWidth, personHeight);
+            ctx.drawImage(img, startX, startY, personWidth, personHeight, 0, 0, personWidth, personHeight);
+
+            console.log(i, img, startX, startY, personWidth, personHeight, 0, 0, personWidth, personHeight);
+
+            i++;
+
+        }, 1000);
+
+    }
+    img.src = 'images/03.png';
+</script>
+
+</html>

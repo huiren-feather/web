@@ -1,77 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        canvas{
+        canvas {
             border: 1px solid #eee;
         }
     </style>
 </head>
+
 <body>
     <canvas width="600" height="400"></canvas>
     <script>
-        var myCanvas=document.querySelector('canvas');
-        var ctx=myCanvas.getContext('2d');
+        var myCanvas = document.querySelector('canvas');
+        var ctx = myCanvas.getContext('2d');
         // console.log(ctx);
         // 绘制饼状图
         // 1.根据数据绘制饼图
         // 2.绘制标题，从扇形的弧的中心伸出一条线，再画一条横线，在横线的上面写上标题文字
         // 3.在画布左上角绘制说明，一个和扇形颜色一样的矩形，旁边的是文字说明
-        var PieChart= function(ctx) {
-            this.ctx=ctx||document.querySelector('canvas').getContext('2d');
-            this.x0=this.ctx.canvas.width/2;
-            this.y0=this.ctx.canvas.height/2;
-            this.radius=150;
+        var PieChart = function(ctx) {
+            this.ctx = ctx || document.querySelector('canvas').getContext('2d');
+            this.x0 = this.ctx.canvas.width / 2;
+            this.y0 = this.ctx.canvas.height / 2;
+            this.radius = 150;
+            // 伸出去的线的长度
+            this.outline = 20;
+            // 说明的矩形的大小
+            this.rectW = 30;
+            this.rectH = 20;
+            this.space = 10;
+
         };
-        PieChart.prototype.init=function(data){
+        PieChart.prototype.init = function(data) {
             // 1.准备数据
             this.drawPie(data);
-            
+
         };
-        PieChart.prototype.drawPie=function(data){
-            var that =this;
+        PieChart.prototype.drawPie = function(data) {
+            var that = this;
             // 2.转化弧度
-           var angleList= this.transformAngle(data);
-        //    3.绘制饼图
-        var temp=0;
-        angleList.forEach(function(item,i){
+            var angleList = this.transformAngle(data);
+            //    3.绘制饼图
+            var temp = 0;
+            angleList.forEach(function(item, i) {
 
-            
-            // 当前的结束弧度要等于下一次的起始弧度
-            ctx.beginPath();
-            ctx.moveTo(that.x0,that.y0);
-            ctx.arc(that.x0,that.y0,that.radius,temp,temp+item.angle);
-            
-            ctx.fillStyle=getRandomColor();
-            ctx.fill();
-            temp+=item.angle;
 
-        });
-        };
-        PieChart.prototype.drawTitle=function(){
+                // 当前的结束弧度要等于下一次的起始弧度
+                ctx.beginPath();
+                ctx.moveTo(that.x0, that.y0);
+                ctx.arc(that.x0, that.y0, that.radius, temp, temp + item.angle);
 
-        };
-        PieChart.prototype.drawDescript=function(){
+                ctx.fillStyle = getRandomColor();
+                var color = ctx.fillStyle;
+                ctx.fill();
 
-        };
-        PieChart.prototype.transformAngle=function(){
-            // 返回的数据内容包含弧度
-            var total=0;
-            data.forEach(function(item,i){
-                total+=item.num;
+                // 绘制标题
+                that.drawTitle(temp, item.angle, color, item.title);
+
+                // 绘制说明
+                that.drawDescript(i, item.title);
+
+                temp += item.angle;
+
+
             });
-            data.forEach(function(item,i){
-                var angle=item.num/total*Math.PI*2;
-                item.angle=angle;
+        };
+        PieChart.prototype.drawTitle = function(startAngle, angle, color, title) {
+            // 1.确定伸出去的线，通过圆心 、通过伸出去的点
+            // 2.确定伸出去的点，需要确定伸出去的线的长度
+            // 3.固定伸出去的线的长度
+            // 4.计算这个点的坐标
+            // 5.根据角度和斜边的长度
+            // 5.1 使用弧度 当前扇形的起始弧度+对应的弧度的一半
+
+            // 5.2 半径+伸出去的长度
+            // 5.3 outX=x0+cos(angle)*(radius+outline)
+            // 5.4 outY=x0+sin(angle)*(radius+outline)
+            // 斜边
+            var edge = this.radius + this.outline;
+            // X轴方向的直角边
+            var edgeX = Math.cos(startAngle + angle / 2) * edge;
+            // Y轴方向的直角边
+            var edgeY = Math.sin(startAngle + angle / 2) * edge;
+            // 计算出去的点坐标
+            var outX = this.x0 + edgeX;
+            var outY = this.y0 + edgeY;
+            this.ctx.beginPath();
+            this.ctx.moveTo(this.x0, this.y0);
+            this.ctx.lineTo(outX, outY);
+            this.ctx.strokeStyle = color;
+
+
+            // 画文字和下划线
+            // 线的方向怎么判断 伸出去的点在x0的左边，线的方向就是左边
+            // 线的方向怎么判断 伸出去的点在x0的右边，线的方向就是右边
+            // 结束的点坐标 和文字大小有关
+            this.ctx.font = '20px Microsoft YaHei';
+            var textWidth = this.ctx.measureText(title).width;
+            if (outX > this.x0) {
+                // 右边
+                this.ctx.lineTo(outX + textWidth, outY);
+                this.ctx.textAlign = 'left';
+
+            } else {
+                // 左边
+                this.ctx.lineTo(outX - textWidth, outY);
+                this.ctx.textAlign = 'right';
+            }
+            this.ctx.stroke();
+            // 文字
+
+            this.ctx.textBaseline = 'bottom';
+            this.ctx.fillText(title, outX, outY);
+            // this.ctx.beginPath();
+            // this.strokeText(title, outX, outY);
+            // this.closePath();
+
+        };
+        PieChart.prototype.drawDescript = function(index, title) {
+            // 绘制说明:矩形加文字
+            // 矩形的大小
+            // 距离上边和左边的间距
+            // 矩形之间的间距
+            this.ctx.fillRect(this.space, this.space + index * (this.rectH + this.space), this.rectW, this.rectH);
+
+            // 绘制文字
+            this.ctx.textAlign = 'left';
+            this.ctx.textBaseline = 'bottom';
+            this.ctx.fillText(title, this.space * 2 + this.rectW, (index + 1) * (this.rectH + this.space));
+
+        };
+        PieChart.prototype.transformAngle = function() {
+            // 返回的数据内容包含弧度
+            var total = 0;
+            data.forEach(function(item, i) {
+                total += item.num;
+            });
+            data.forEach(function(item, i) {
+                var angle = item.num / total * Math.PI * 2;
+                item.angle = angle;
             });
             // console.log(data);
             return data;
         };
-                // 随机颜色函数
-                function getRandomColor() {
+        // 随机颜色函数
+        function getRandomColor() {
             var r = Math.floor(Math.random() * 256);
             var g = Math.floor(Math.random() * 256);
             var b = Math.floor(Math.random() * 256);
@@ -79,27 +156,22 @@
 
         }
 
-        var data=[
-            {
-                title:'15-20岁',
-                num:6
-            },
-            {
-                title:'20-25岁',
-                num:30
-            },
-            {
-                title:'25-30岁',
-                num:10
-            },
-            {
-                title:'30岁以上',
-                num:4
-            }
-        ];
-        var pieChart=new PieChart();
+        var data = [{
+            title: '15-20岁',
+            num: 6
+        }, {
+            title: '20-25岁',
+            num: 30
+        }, {
+            title: '25-30岁',
+            num: 10
+        }, {
+            title: '30岁以上',
+            num: 4
+        }];
+        var pieChart = new PieChart();
         pieChart.init(data);
-
     </script>
 </body>
+
 </html>
