@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- 使用v-cloak 能够解决 插值表达式闪烁问题 -->
+        <p v-cloak>111{{msg}}</p>
+        <!-- v-text的功能和{{}}一致 -->
+        <!-- 区别1：v-text没有闪烁问题 -->
+        <!-- 区别2：v-text会覆盖掉元素中的内容 -->
+
+        <h4 v-text='msg'>111</h4>
+        <div>{{msg2}}</div>
+        <div v-text='msg2'></div>
+        <!-- v-html,解析成HTML代码，会覆盖掉元素中的内容 -->
+        <div v-html='msg2'>1111</div>
+        <!--  -->
+        <input type="button" value="按钮" title="123">
+    </div>
+    <script src="./lib/vue-2.4.0.js"></script>
+    <script>
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                msg:'123',
+                msg2:'<h1>呵呵，我是逗比</h1>',
+                myTitle:'这是一个自己定义的'
+            }
+        })
+    </script>
+</body>
+</html>
