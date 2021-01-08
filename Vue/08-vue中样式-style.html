@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/vue-2.4.0.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 对象就是无须键值对集合 -->
+        <!-- 对象属性如果中间有-，就必须加引号 -->
+        <!-- 内联样式绑定 -->
+        <!-- 1 -->
+        <h1 :style="{color:'red','font-weight':200}">
+            这是一个好的H1
+        </h1>
+        <!-- 2 -->
+        <h1 :style="styleObj1">
+            这是一个好的H1
+        </h1>
+        <!-- 3 通过数组，引用多个data上的样式对象-->
+        <h1 :style="[styleObj1,styleObj2]">
+            这是一个好的H1
+        </h1>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                styleObj1: {
+                    color: 'red',
+                    'font-weight': 200
+                },
+                styleObj2: {
+                    'font-style': 'italic',
+                    'font-family': '宋体'
+                }
+            },
+            methods: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

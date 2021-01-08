@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/vue-2.4.0.js"></script>
+    <style>
+        .red {
+            color: red;
+        }
+        
+        .thin {
+            font-weight: 200;
+        }
+        
+        .italic {
+            font-style: italic;
+        }
+        
+        .active {
+            letter-spacing: 0.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <h1 class="red thin">
+            一个达到无法想象的H1
+        </h1> -->
+        <!-- vue绑定class样式 -->
+        <!-- 1.直接传递一个数组，注意：这里的class需要使用v-bind做数据绑定 -->
+        <!-- <h1 :class="['red','thin']">
+            一个达到无法想象的H1
+        </h1> -->
+        <!-- 2.在数组中使用三元表达式 -->
+        <h1 :class="['red','thin',flag?'active':'']">
+            一个达到无法想象的H1
+        </h1>
+        <!-- 3.数组中嵌套对象 -->
+        <h1 :class="['red','thin',{'active':flag}]">
+            一个达到无法想象的H1
+        </h1>
+        <!-- 4.直接使用对象,使用v-bind绑定对象时，对象的属性是类名；由于对象的属性可带引号，也可不带引号，这里就不写了
+        属性的值是一个标志符 -->
+        <h1 :class="{red:true,thin:true,italic:true, active:flag}">
+            一个达到无法想象的H1
+        </h1>
+        <h1 :class="classObj">
+            一个达到无法想象的H1
+        </h1>
+
+
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                flag: true,
+                classObj: {
+                    red: true,
+                    thin: true,
+                    italic: true,
+                    //Vue中data属性不能使用data中的另一个属性，flag
+                    // active:flag
+                    active: true
+                }
+            },
+            methods: {
+
+            }
+        });
+    </script>
+</body>
+
+</html>

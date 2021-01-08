@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/vue-2.4.0.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="切换" @click="toggle">
+        <input type="button" value="切换不用方法" @click="flag=!flag">
+        <!-- v-if:每次都重新创建或删除元素，有较高的切换性能消耗-->
+        <!-- v-show：只是切换了属性：display：none，有较高的初始渲染消耗（如果这个元素被创建后，没有被显示过） -->
+
+        <!-- 如果涉及频繁的切换，最好不要用v-if -->
+        <!-- 如果元素可能永远也不会显示出来，推荐用v-if -->
+
+        <h3 v-if="flag">这是v-if</h3>
+        <h3 v-show="flag">这是v-show</h3>
+        <br> {{flag}}
+
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                flag: true
+            },
+            methods: {
+                toggle() {
+                    this.flag = !this.flag;
+
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
