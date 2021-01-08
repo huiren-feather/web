@@ -21,7 +21,7 @@
             <div class="panel-body form-inline">
                 <label for="">
                     Id:
-                    <input type="text"  class="form-control" v-model="id">
+                    <input type="text" class="form-control" v-model="id">
                 </label>
                 <label for="">
                     Name:
@@ -32,6 +32,10 @@
 
                 <input type="button" value="添加" class="btn btn-primary" @click="add">
 
+                <label for="">
+                    关键字:
+                    <input type="text" class="form-control" v-model="keywords">
+                </label>
             </div>
         </div>
 
@@ -64,6 +68,7 @@
             data: {
                 id: '',
                 name: '',
+                keywords:'',
                 list: [{
                     id: 1,
                     name: '奔驰',
@@ -96,15 +101,24 @@
                     // 分析：
                     // 1.如何根据id，找到要删除这一项的索引
                     // 2.找到索引后，直接调用数组的splice方法
-                    this.list.some((item, i) => {
-                        if (item.id == id) {
-                            //在数组的some方法中，如果return true 就会立即终止这个数组的后续循环
-                            this.list.splice(i, 1)
-                            return true;
 
+                    // 方法一
+                    // this.list.some((item, i) => {
+                    //     if (item.id == id) {
+                    //         在数组的some方法中，如果return true 就会立即终止这个数组的后续循环
+                    //         this.list.splice(i, 1)
+                    //         return true;
+
+                    //     }
+                    // });
+
+                    // 方法二
+                    var index= this.list.findIndex(item => {
+                        if (item.id == id) {
+                            return true;
                         }
                     });
-
+                    this.list.splice(index,1);
                 }
 
             }
