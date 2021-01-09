@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/vue-2.4.0.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p> {{msg | msgFormat('疯狂')|test}}</p>
+    </div>
+    <script>
+        // 过滤器可以多次调用
+        // 定义个Vue全局的过滤器，名字叫msgFormat
+        Vue.filter('msgFormat', function(msg, arg) {
+            //字符串的replace方法，第一个参数，可以写字符串，还可以定义一个正则表达式
+            // 后面的位置可以传递多个参数
+            return msg.replace(/单纯/g, arg);
+        });
+        Vue.filter('test', function(msg) {
+            return msg + '====';
+        });
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: '曾经，我也是个单纯的少年，单纯的我，傻傻的问，谁是世界上最单纯的男人'
+            },
+            methods: {
+
+            }
+        });
+    </script>
+</body>
+
+</html>

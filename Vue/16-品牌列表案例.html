@@ -50,7 +50,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="item in list" :key="item.id">
+                <!-- 之前，v-for中的数据，都是直接从data上的list渲染过来的，现在是，传递参数到search
+                    方法，其中执行过滤操作，返回一个对象数组 -->
+                <tr v-for="item in search(keywords)" :key="item.id">
                     <td>{{item.id}}</td>
                     <td>{{item.name}}</td>
                     <td>{{item.ctime}}</td>
@@ -68,7 +70,7 @@
             data: {
                 id: '',
                 name: '',
-                keywords:'',
+                keywords: '',
                 list: [{
                     id: 1,
                     name: '奔驰',
@@ -113,13 +115,38 @@
                     // });
 
                     // 方法二
-                    var index= this.list.findIndex(item => {
+                    var index = this.list.findIndex(item => {
                         if (item.id == id) {
                             return true;
                         }
                     });
-                    this.list.splice(index,1);
+                    this.list.splice(index, 1);
+                },
+                // 根据关键字，搜索数据
+                search(keywords) {
+                    // var newList = [];
+                    // this.list.forEach(item => {
+                    //     // indexOf当参数为空时，返回的不是-1，所以不填写时可以把所有数据输出
+                    //     if (item.name.indexOf(keywords) != -1) {
+                    //         console.log(item.name.indexOf(keywords));
+                    //         newList.push(item);
+                    //     }
+                    // });
+                    // return newList;
+
+                    //注：foreach,some, filter findIndex 都属于数组的新方法
+
+                    // filter:返回一个满足条件的新数组
+                    var newList1 = this.list.filter(item => {
+                        // ES6中: 新方法：includes('要包含的字符串')
+                        // 如果包含，返回true；
+                        if (item.name.includes(keywords)) {
+                            return item;
+                        }
+                    });
+                    return newList1;
                 }
+
 
             }
 
