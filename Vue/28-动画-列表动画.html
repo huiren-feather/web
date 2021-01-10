@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+    <style>
+        li {
+            border: 1px dashed #cccccc;
+            margin: 5px;
+            line-height: 35px;
+            padding-left: 5px;
+        }
+        
+        li:hover {
+            background-color: hotpink;
+            transition: all 0.7s ease;
+        }
+        
+        .v-enter,
+        .v-leave-to {
+            opacity: 0;
+            transform: translateY(200px);
+        }
+        
+        .v-enter-active,
+        .v-leave-active {
+            transition: all 0.4s ease;
+        }
+        /* 设置在位移时，设置动画效果 */
+        
+        .v-move {
+            transition: all 0.6s ease;
+        }
+        /* 只加v-move还不行，还有加上绝对定位 */
+        
+        .v-leave-active {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <label for="">
+                Id:     
+                <input type="text" v-model="id">
+            </label>
+            <label for="">
+                Name:     
+                <input type="text" v-model="name">
+            </label>
+            <input type="button" value="添加" @click="add">
+        </div>
+
+        <!-- <ul> -->
+        <!-- 在实现列表过渡的时候，如果需要过渡的元素，是通过v-for循环渲染出来的，不能使用transition包裹，需要使用transition-group -->
+        <!-- 加appear：刷新入场时，动画进入 -->
+        <!-- 当外层直接加ul时，渲染的页面中，ul和li之间出现了span；所以这里用：tag="ul" -->
+        <transition-group appear tag="ul">
+            <li v-for="(item, i) in list" :key="item.id" @click="del(i)">
+                {{item.id}}:{{item.name}}
+            </li>
+        </transition-group>
+        <!-- </ul> -->
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                id: '',
+                name: '',
+                list: [{
+                        id: 1,
+                        name: '赵高'
+                    }, {
+                        id: 2,
+                        name: '秦桧'
+                    }, {
+                        id: 3,
+                        name: '魏忠贤'
+                    }, {
+                        id: 4,
+                        name: '鳌拜'
+                    },
+
+                ]
+            },
+            methods: {
+                add() {
+                    var temp = {
+                        id: this.id,
+                        name: this.name
+                    };
+                    this.list.push(temp);
+                    this.id = this.name = '';
+                },
+                del(i) {
+                    this.list.splice(i, 1);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

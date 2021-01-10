@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<!-- 2.自定义两组样式，来控制transition内部的元素实现动画 -->
+<style>
+    /* v-enter(这是一个时间点)，还未进入动画时的起始状态 */
+    /* v-leave-to(这是一个时间点)，动画离开之后的终止状态 */
+    
+    .v-enter,
+    .v-leave-to {
+        opacity: 0;
+        transform: translateX(120px);
+    }
+    /* v-enter-active:入场动画的时间段 */
+    /* v-leave-active:离场动画的时间段 */
+    
+    .v-enter-active,
+    .v-leave-active {
+        transition: all 0.4s ease;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <input type="button" value="toggle" @click="flag=!flag">
+        <!-- 需求：点击按钮，让h3显示，再点击,让h3隐藏 -->
+        <!-- 1.使用transition,Vue提供的，把需要动画的元素，包裹起来 -->
+        <transition>
+            <h3 v-if="flag">这是v-if逗逼职务</h3>
+        </transition>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                flag: false
+            },
+            methods: {
+
+            }
+        });
+    </script>
+</body>
+
+</html>

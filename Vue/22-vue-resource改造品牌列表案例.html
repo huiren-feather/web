@@ -50,13 +50,16 @@
                     <td> {{item.id}} </td>
                     <td> {{item.name}} </td>
                     <td> {{item.ctime}} </td>
-                    <td> <a href="javascript:;" @click:prevent>删除</a> </td>
+                    <td> <a href="javascript:;" @click.prevent='del(item.id)'>删除</a> </td>
                 </tr>
             </tbody>
         </table>
     </div>
 
     <script>
+        // 可以统一用一个网站，不用重复写
+        Vue.http.options.root = 'http://liulongbin.top:3005';
+        Vue.http.options.emulateJSON = true;
         var vm = new Vue({
             el: '#app',
 
@@ -74,11 +77,64 @@
             },
             methods: {
                 add() {
-
+                    // 添加品牌
+                    // 分析
+                    // 1.听过查看数据API接口，
+                    // 2.this.$http.post('url',)三个参数：URL；提交到服务器的数据（对象的形式）；
+                    // 配置对象，要以哪种表单数据类型提交过去（{emulateJSON：true}），以普通表单格式，将数据提交到服务器application/x-www-form-urlencoded
+                    // 3.在POST方法中，使用.then来设置成功的回调函数，如果想要拿到成功的结果，需用到result.body
+                    this.$http.post('api/addproduct', {
+                        name: this.name
+                    }, {
+                        emulateJSON: true
+                    }).then(result => {
+                        if (result.body.status === 0) {
+                            // 把最新的数据获取到页面
+                            this.getAllList();
+                        } else {
+                            console.log(result.body.status);
+                            alert('添加失败');
+                        }
+                    });
                 },
                 getAllList() {
                     // 获取所有的品牌列表
+                    // 分析：
+                    // 1.已经导入vue-resource包，可以直接通过this.$http来发起数据请求
+                    // 2.根据API文档，知道请求方式是get
+                    // 3.this.$http.get().then(function(result){})
+                    // 4.通过then中的回调函数，拿到服务器返回的result
+                    // 5.先判断result.status是否为0，是，则成功，把message赋值给this.list；否则，弹出提示失败
+                    this.$http.get('api/getprodlist').then(result => {
+                        // 通过$http获取到的数据，都在result.body中
+                        console.log(result);
+                        var result = result.body;
+                        if (result.status === 0) {
+                            this.list = result.message;
+                        } else {
+                            alert('失败');
+                        }
+                    });
+                },
+                del(id) {
+                    // 删除品牌
+                    console.log(id);
+                    // url前面的/要去掉
+                    this.$http.get('api/delproduct/' + id).then(result => {
+                        if (result.body.status === 0) {
+                            console.log(0);
+                            console.log(result.body);
+                            this.getAllList();
+                        } else {
+                            console.log(1);
+                            alert('删除失败');
+                        }
+                    });
                 }
+
+            },
+            created() {
+                this.getAllList();
             }
         });
     </script>
