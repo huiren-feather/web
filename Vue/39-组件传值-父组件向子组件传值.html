@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <com1></com1>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: '123 父组件中的数据'
+            },
+            methods: {
+
+            },
+            components: {
+                com1: {
+                    // 默认子组件=无法访问父组件的data数据和methods方法的
+                    template: '<h1>这是子组件 {{msg}}</h1>'
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

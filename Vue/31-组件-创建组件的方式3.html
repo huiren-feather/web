@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 如果要使用组件，直接把组件的名称，以HTML标签的形式，引入界面中即可 -->
+        <!-- 注：组件创建时的名称可以用驼峰命名法，但在使用时要 大写 修改为  -小写 ；如果不用驼峰，原样即可-->
+        <my-com1>
+
+        </my-com1>
+    </div>
+
+    <div id="app2">
+        <my-com1>
+
+        </my-com1>
+        <login></login>
+    </div>
+
+    <!-- 在被控制的#app外面，使用template元素，定义组件的HTML模板结构 -->
+    <template id="temp1">
+        <div>
+            <h1>这是通过template元素，在外部定义的组件结构，这个方式有代码的能提示和高亮</h1>
+            <h3>好用</h3>
+        </div>
+    </template>
+
+    <template id="temp2">
+        <h1>这是私有的login组件</h1>
+    </template>
+
+    <script>
+        // 创建组件的方式2
+        // 1使用Vue.component('组件的名称',创建出来的组件模板对象)
+        Vue.component('myCom1', {
+            // 注：模板中，只能有一个根元素，最外层只能有一个标签
+            template: '#temp1'
+        });
+
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            methods: {
+
+            }
+        });
+
+        var vm2 = new Vue({
+            el: '#app2',
+            data: {},
+            methods: {},
+            filters: {},
+            directives: {},
+            components: {
+                login: {
+                    template: '#temp2'
+                }
+            },
+
+            beforeCreate() {},
+            created() {},
+            beforeMount() {},
+            mounted() {},
+            beforeUpdate() {},
+            updated() {},
+            beforeDestroy() {},
+            destroyed() {}
+        });
+    </script>
+</body>
+
+</html>

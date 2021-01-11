@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <mycom1>
+            </myscom1>
+    </div>
+    <script>
+        // 1.组件有自己的data
+        // 2.组件中的data 必须是一个函数，且必须返回一个对象
+        // 3.组件中的data数据，使用方式和实例中的data数据一模一样
+        Vue.component('mycom1', {
+            template: '<h1>这是全局组件------{{msg}}  </h1>',
+            // data 必须是一个函数，且必须返回一个对象
+            data: function() {
+                return {
+                    msg: '这是组件中的data定义的数据'
+                }
+            }
+        });
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            methods: {
+
+            }
+        });
+    </script>
+</body>
+
+</html>
