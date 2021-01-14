@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+    <script src="lib/vue-router-3.0.1.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <router-link to="/login">登录</router-link>
+        <router-link to="/register">注册</router-link>
+        <!-- 4.展示路由 -->
+        <router-view></router-view>
+    </div>
+    <script>
+        // 2.创建子组件
+        var login = {
+            template: '<h3>登录子组件</h3>'
+        }
+        var register = {
+                template: '<h3>注册子组件</h3>'
+            }
+            // 3.创建一个路由对象
+        var router = new VueRouter({
+            // 路由规则数字组
+            routes: [{
+                path: '/',
+                redirect: '/login'
+            }, {
+                path: '/login',
+                component: login
+            }, {
+                path: '/register',
+                component: register
+            }],
+            linkActiveClass: 'myactive' //和激活相关的类
+        });
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            methods: {
+
+            },
+            router,
+            watch: {
+                // this.$route.path
+                '$route.path': function(newVal, oldVal) {
+                    // console.log(newVal + '-' + oldVal);
+                    if (newVal == '/login') {
+                        console.log('欢迎登陆');
+                    } else {
+                        console.log('欢迎注册');
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

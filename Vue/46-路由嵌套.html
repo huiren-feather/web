@@ -6,14 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="./lib/vue-2.4.0.js"></script>
+    <script src="lib/vue-router-3.0.1.js"></script>
 </head>
 
 <body>
-    <div id="app"></div>
+    <div id="app">
+        <router-link to='/account'>Account</router-link>
+        <router-view></router-view>
+    </div>
+
+    <template id="tmpl">
+            <div>
+                <h1>这是account组件</h1>
+                <router-link to='/account/login'>login</router-link>
+                <router-link to='/account/register'>register</router-link>
+                <router-view></router-view>
+            </div>
+        </template>
     <script>
-        var acount = {
-            template: '#tmpl'
+        // 组件的模板对象
+        var account = {
+            template: '#tmpl',
+
         };
+        var login = {
+            template: '<h3>这是登录组件</h3>',
+
+        };
+        var register = {
+            template: '<h3>这是注册组件</h3>',
+
+        };
+        var router1 = new VueRouter({
+            routes: [{
+                    path: '/account',
+                    component: account,
+                    // children实现路由嵌套
+                    children: [{
+                        path: 'login', //前面就不要拼account/前缀
+                        component: login
+                    }, {
+                        path: 'register',
+                        component: register
+                    }]
+                },
+                // {
+                //     path: '/account/login',
+                //     component: login
+                // }, {
+                //     path: '/account/register',
+                //     component: register
+                // }
+            ]
+        });
         var vm = new Vue({
             el: '#app',
             data: {
@@ -21,7 +66,8 @@
             },
             methods: {
 
-            }
+            },
+            router: router1
         });
     </script>
 </body>
