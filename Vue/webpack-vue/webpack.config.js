@@ -58,7 +58,12 @@ module.exports = {
     ]
   },
   // mode:"development",
-  
+
+  // resolve:{
+  //   alias:{
+  //     'vue$':'vue/dist/vue.esm.js'
+  //   }
+  // },
   output: { // 输出文件相关的配置
     path: path.join(__dirname, './dist'), // 指定 打包好的文件，输出到哪个目录中去
     filename: 'bundle.js' // 这是指定 输出的文件的名称
