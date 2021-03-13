@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 属性名称可以是某个保留字,关键字等,没有限制
+        let obj={
+            for:1,
+            let:2,
+            return:3,
+            var:4,
+        }
+        alert(obj.for+obj.let+obj.return+obj.var);
+
+        // 其他类型会被自动转换为字符串
+        // 例子
+        let obj1={
+            0:"test",//等同于"0":"test"
+        };
+        alert(obj1["0"]);
+        alert(obj1[0]);
+    </script>
+</body>
+</html>

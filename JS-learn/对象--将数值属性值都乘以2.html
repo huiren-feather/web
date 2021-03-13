@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.判断是否是数值
+        // 2.如果是就乘以2，如果不是就不乘
+
+        function multiplyNumeric(obj){
+            for (let key in obj) {
+              if (typeof obj[key]=='number') {
+                  obj[key]*=2;
+              }
+            }
+        }
+        // 在调用之前
+        let menu = {
+            width: 200,
+            height: 300,
+            title: "My menu"
+        };
+
+        multiplyNumeric(menu);
+
+        console.log(menu);
+    </script>
+</body>
+
+</html>

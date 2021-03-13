@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let user = {
+            name: "Bob",
+            age: 18,
+        };
+        // 1
+        alert(user.noSuchProperty === undefined);//true,表示没有这个属性
+
+        // 2.检查属性是否存在的操作符"in"--更好，但用得少
+        alert("age" in user);//true,表示存在age
+        alert("gender" in user);//false ,表示不存在gender
+
+        // 更好的原因
+        let obj = {
+            test: undefined
+        };
+        alert(obj.test); // 显示 undefined，所以属性不存在？
+        alert("test" in obj); // true，属性存在！
+    </script>
+</body>
+
+</html>

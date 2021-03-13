@@ -35,13 +35,45 @@ import Vue from 'vue'
 
 // 1.导入login组件
 import login from './login.vue'
+import test from './test'
+// 2.默认webpack无法打包.vue文件，需要安装相关的loader：
+// npm i vue-loader vue-template-complier -D
+// 在配置文件中，新增loader配置项 {test:/\.vue$/,use:'vue-loader'}
 
 var vm=new Vue({
     el:'#app',
     data:{
         msg:'123'
-     }//,
+     },
     // components:{
     //     login
     // }
+    // webpack中，如果想通过vue，把一个组件放到页面中去展示，vm 实例中的render函数可以实现
+    // render:function(createElements){
+    //     return createElements(login)
+    // }
+
+    // 简写形式
+    render:c=>c(login)
 })
+
+
+// 总结梳理：webapck中使用VUE
+// 1.首先，安装vue包：npm i vue -S
+// 2.由于在webpack中，推荐使用.vue这个组件模板文件定义组件，所以需要安装能解析这种文件的loader ：npm i vue-loader vue-template-complier -D
+// 注：vue-loader15版本以上，还要安装插件在配置文件中：const VueLoaderPlugin  = require('vue-loader/lib/plugin')
+// plugins:[  new VueLoaderPlugin()]
+    // 处理Vue文件
+    // {test:/\.vue$/,use:'vue-loader'}
+// 3.在main.js 中，导入vue模块， import Vue form 'vue'
+// 4.定义一个.vue结尾的组件，其中由三部分组成：template ，script ，style
+// 5.使用import login from './login.vue'导入这个组件
+// 6.创建VM实例：var vm=new Vue({el:#app,render:c=>c(login)})
+// 7.在页面中创建一个id为app的div元素，作为vm实例的控制区
+
+
+import m1,{title as ttt,content} from './test.js'
+
+console.log(m1);
+// console.log(title+'----'+content);
+console.log(ttt+'----'+content);

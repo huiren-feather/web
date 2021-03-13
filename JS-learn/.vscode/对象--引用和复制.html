@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user={name:'John'};
+        let admin =user;
+        admin.name='Pete';
+        alert(user.name);
+        // 对象相等,只有当两个对象为同一个对象时
+        alert(admin==user);
+        alert(admin===user);
+
+        // 两个独立的对象并不相等，即使他们的内容一样
+        let a={};
+        let b={};
+        // 因为比较的是地址，肯定不相同啊
+        alert(a==b);
+        alert(a===b);
+
+        // 复制对象
+        // 1.
+        let clone={};
+        for (const key in user) {
+            clone[key]=user[key];
+        }
+        // 2.Object.assgin(dest,[src1,src2,...]),合并src并赋值给dest
+    //    注：如果同名属性，会覆盖；
+        let clone=Object.assign({},user)
+        
+        // 注：以上全部，属性值是原始属性，如果有对象属性，使用 _.cloneDeep(obj)
+
+    </script>
+</body>
+</html>

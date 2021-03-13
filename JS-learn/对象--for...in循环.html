@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user={
+            name:"Bob",
+            age:30,
+            isAdmin:true
+        }
+        for (let key in user) {
+            alert(key);
+            alert(user[key]);
+        }
+
+        // “有特别的顺序”：整数属性会被进行排序，其他属性则按照创建的顺序显示
+        let codes={
+            "49":"Germany",
+            "41":"Switzerland",
+            "44":"Great Britain",
+        }
+
+        for (const key in codes) {
+            console.log(key+"-"+codes[key]+"**");
+            // 41-Switzerland**44-Great Britain**49-Germany**
+        }
+    </script>
+</body>
+</html>
