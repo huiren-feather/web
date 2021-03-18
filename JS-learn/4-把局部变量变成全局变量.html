@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--  -->
+    <script>
+        // 自调用函数
+        (function(){
+            console.log("自调用函数");
+        })();
+
+        // 
+        (function(a){
+            var num=10;
+        })(1);
+        //console.log(num);//报错：num is not defined
+
+        // 把局部变量变成全局变量
+        // 把局部变量给window就可以了
+        (function(win){
+            var num=10;//局部变量
+            // js是一门动态类型的语言，对象没有属性，点了就有了
+            win.num=num;
+        })(window);
+        console.log(num);
+
+        // 把局部对象变成全局对象
+        (function(win){
+            function Random(){};
+            Random.prototype.getRandom=function(min,max){
+                return Math.floor(Math.random()*(max-min)+min);
+            };
+            // 把Random对象暴露给顶级对象window---->外部可以直接使用这个对象
+            window.Random=Random;
+        })(window)
+        let rm=new Random();
+        console.log(rm.getRandom(0,6));
+    </script>
+</body>
+</html>

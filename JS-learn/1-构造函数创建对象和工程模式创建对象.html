@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.工厂模式
+        function createPerson(name,age){
+            var obj=new Object();
+            obj.name=name;
+            obj.age=age;
+            obj.sayHi=function(){
+                alert("hello");
+            };
+            return obj;
+        }
+        // 2.构造函数(常用)
+        function Person(name,age){
+            this.name=name;
+            this.age=age;
+            this.sayHi=function(){
+                console.log("hi");
+            };
+        }
+        // 1
+        var per1=createPerson("bob",18);
+        var per2=new Person("john",19);
+        per1.sayHi();
+        per2.sayHi();
+
+        // 面向对象：抽象的过程----->实例化的过程
+        // 实例对象是通过构造函数来创建的
+        
+        console.log(per2);
+        console.dir(per2);
+        console.log(Person);
+        console.dir(Person);
+
+    </script>
+</body>
+</html>
