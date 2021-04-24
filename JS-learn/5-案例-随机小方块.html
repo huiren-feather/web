@@ -19,7 +19,29 @@
     </div>
     <script src="common.js"></script>
     <script>
+        // 产生随机数对象
+        (function(window){
+            function Random(){
+            }
+            Random.prototype.getRandom=function(min,max){
+                return Math.floor(Math.random()*(max-min)+min);
+            };
+            // window.Random=Random;  //这个相当于直接把函数给了window的一个属性Random
 
+            // 把局部对象暴露给window顶级对象，就成了全局的对象
+            window.Random= new Random();  //这个相当于window的Random属性值是一个对象
+
+        })(window);//自调用构造函数的方式，分号一定要加上 
+        
+        // console.log(window.Random.getRandom(0,20));
+
+        // 产生小方块对象
+        (function(window){
+            console.log(Random.getRandom(0,20));//window.Random.中的window可省略
+            // 选择器的方式来获取元素对象
+            let map=document.querySelector(".map");
+
+        })(window);
     </script>
 </body>
 </html>

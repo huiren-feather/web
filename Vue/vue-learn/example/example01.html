@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelloWorld</title>
+    <script src="../assets/js/jquery-3.0.0.js"></script>
+    <script src="../assets/js/vue-2.4.0.js"></script>
+</head>
+<body>
+    <h1>HelloWorld</h1>
+    <hr>
+    <div id="app">
+        {{message}}
+    </div>
+
+    <script >
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                message:'hello world!11s'
+            },
+            mounted:function(){
+                $("#app").html("我是jQuery");
+            },
+            methods:{
+                add:function(){
+                    console.log("调用了内部的add方法");
+                }
+            }
+        })
+
+        vm.add();
+        console.log(vm);
+    </script>
+</body>
+</html>

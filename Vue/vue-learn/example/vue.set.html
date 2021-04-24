@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue.set</title>
+    <script src="../assets/js/vue-2.4.0.js"></script>
+</head>
+<body>
+    <h1>vue.set</h1>
+    在构造器外部操作构造器内部的数据、属性或者方法<hr>
+    三、为什么要有Vue.set的存在?<hr>
+由于Javascript的限制，Vue不能自动检测以下变动的数组。<hr>
+
+当你利用索引直接设置一个项时，vue不会为我们自动更新。<br>
+当你修改数组的长度时，vue不会为我们自动更新。
+    <hr>
+    <div id="app">
+        {{count}}
+        <!-- {{goodName}} -->
+        <ul>
+            <li  v-for="item in arr">{{item}}</li>
+        </ul>
+    </div>
+    <p><button onclick="add()">加</button></p>
+
+    <script >
+        // 引用外部数据
+        var outData={
+            count:1,
+            // goodName:'car',
+            arr:['aad','bbb','ccc']
+
+        }
+        // 调用vue的方法
+        function add() {
+            // 修改outData 中的count 值变成2
+            // Vue.set(outData,'count',2);
+
+            // 外部操作内部数据
+            // vm.count++;
+            // vm.arr[1]='ddd';//变不了了
+            // 所以只能用vue.set
+            Vue.set(vm.arr,1,'ddd');
+            //直接修改
+            // outData.count++;
+        }
+        var vm=new Vue({
+            el:'#app',
+            data:outData,
+            methods:{
+  
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelloWorld</title>
+    <script src="../assets/js/vue-2.4.0.js"></script>
+</head>
+<body>
+    <h1>HelloWorld</h1>
+    <hr>
+    <div id="app">
+        {{count}}
+        <button @click="add">add</button>
+        <br>
+        {{num}}
+        <button @click="add2(3)">add2</button>
+        <br>
+        <!--.native让组件调用构造器里的原生事件  -->
+       <btn @click.native='add'></btn>
+    </div>
+    <!-- 外部调用构造器中的方法，尽量少用 -->
+    <button onclick="vm.add()">外部add</button>
+    <script >
+        var btnComponent={
+            template:`<button>组件add</button>`
+        }
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                count:1,
+                num:0,
+            },
+            components:{
+                'btn':btnComponent
+            },
+            methods:{
+                add:function(){
+                    this.count++;
+                },
+                add2:function(n){
+                    this.num+=n;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

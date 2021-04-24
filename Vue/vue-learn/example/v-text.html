@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-text&v-html</title>
+    <script src="../assets/js/vue-2.4.0.js"></script>
+</head>
+<body>
+    <h1>v-text&v-html</h1>
+    <div id="app">
+        <!-- 在加载时，先出现{{message}}    v-text可以避免-->
+        <span>{{message}}</span>=<span v-text='message'></span>
+        <!-- 识别html标签，尽量少用，会被黑客攻击 -->
+        <span v-html='dodo' ></span>
+    </div>
+    <script >
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                message:'Hello World!',
+                dodo:'<h2>haha</h2>'
+            }
+        });
+    </script>
+</body>
+</html>

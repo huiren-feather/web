@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue.directive</title>
+    <script src="../assets/js/vue-2.4.0.js"></script>
+</head>
+<body>
+    <h1>vue.directive</h1>
+    <hr>
+    <div id="app">
+        <div v-huiren='color'>{{num}}</div>
+        <button @click='add' >add</button>
+    </div>
+    <p> <button onclick="unbind()">解绑</button></p>
+
+    <script >
+        function unbind(){
+            // 解绑，使用的是声明的vue实例
+            vm.$destroy();
+        }
+        Vue.directive('huiren',//function(el,binding){
+            // console.log(el);
+            // console.log(binding);
+            // console.log(binding.name);
+            // console.log(binding.value);
+            // console.log(binding.expression);
+            //el.style='color:'+binding.value
+        //}
+        // 钩子函数
+        {
+            bind:function(el,binding){
+                // 解绑后，已经起作用的不会被去除
+                el.style='color:'+binding.value;
+                console.log('1-bind');
+            },
+            inserted:function(){
+                console.log('2-insert');
+            },
+            update:function(){
+                console.log('3-update');
+            },
+            componentUpdated:function(){
+                console.log('4-componentUpdatee');
+            },
+            unbind:function(){
+                console.log('-1-unbind');
+            },
+        }
+        );
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                num:10,
+                color:'green',
+            },
+            methods:{
+                add:function(){
+                    this.num++;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

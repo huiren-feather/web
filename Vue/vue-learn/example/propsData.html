@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelloWorld</title>
+    <script src="../assets/js/vue-2.4.0.js"></script>
+</head>
+<body>
+    <h1>HelloWorld</h1>
+    <hr>
+    全局扩展时进行传递数据
+    <header></header>
+
+    <script >
+        var header_a=Vue.extend({
+            template:`<h2>i'm a programmer,my name is {{name}}---{{a}}</h2>`,
+            data:function(){
+                return {
+                    name:'huiren',
+                    age:18,
+                }
+            },
+            props:['a'],
+
+        });
+        // 好麻烦的样子，用的不多
+        new  header_a({propsData:{a:12}}).$mount('header');
+    </script>
+</body>
+</html>

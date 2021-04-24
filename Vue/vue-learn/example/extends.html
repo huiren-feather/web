@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mixins</title>
+    <script src="../assets/js/vue-2.4.0.js"></script>
+</head>
+<body>
+    <h1>Mixins</h1>
+    <hr>
+    Mixins一般有两种用途：<hr>
+
+ 
+    <div id="app">
+        ${num}
+        <p><button @click="add">add</button></p>
+    </div>
+
+    <script >
+        var extendsOj={
+            updated:function(){
+                console.log('我是扩展的updated');
+            },
+            // 方法名如果和原生的名字一样，只执行原生的方法；
+            add:function(){
+                    this.num++;
+                    console.log('我是扩展的方法');
+                }
+
+        }
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                num:0,
+            },
+            methods:{
+                add:function(){
+                    this.num++;
+                    console.log('我是原生的方法');
+                }
+            },
+            updated:function(){
+                console.log('我是原生的updated');
+            },
+            // 一个实例只能有一个扩展
+           extends:extendsOj,
+        //    修改插值的形式 ${ }
+        delimiters:['${','}'],
+        })
+    </script>
+</body>
+</html>

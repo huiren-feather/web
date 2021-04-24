@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>component-2</title>
+    <script src="../assets/js/vue-2.4.0.js"></script>
+</head>
+<body>
+    <h1>component-2</h1>
+    <hr>
+    <div id="app">
+        {{message}}
+        <!-- 组件就是自定义各种HTML中不存在的标签 -->
+        <!-- 组件属性，传值 -->
+        <huiren :here='message'></huiren>
+    </div>
+
+
+    <script >
+
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                message:'China'
+            },
+            // 注：中间加-时，在props中使用小驼峰
+            components:{
+                "huiren":{
+                    template:`<div style="color:green">huiren come from {{here}}</div>`,
+                // 定义这个组件的属性
+                props:['here'],
+                },
+            }
+        })
+        
+
+    </script>
+</body>
+</html>

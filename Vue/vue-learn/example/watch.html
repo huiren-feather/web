@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>watch</title>
+    <script src="../assets/js/vue-2.4.0.js"></script>
+</head>
+<body>
+    <h1>watch</h1>
+    <hr>
+    数据变化的监控
+    <div id="app">
+         <p>今天温度：{{temperature}}</p>
+         <p>穿衣建议：{{suggestion}}</p>
+         <button @click='add(4)'>升温</button>
+         <button @click='reduce(4)'>降温</button>
+    </div>
+
+    <script >
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                clothes:['T恤短袖','长衣夹克','棉衣羽绒服'],
+                temperature:14,
+                suggestion:'长衣夹克',
+            },
+            methods:{
+                add:function(num){
+                    this.temperature+=num;
+                },
+                reduce:function(num){
+                    this.temperature-=num;
+                }
+            },
+            watch:{
+                temperature:function(newVal,oldVal){
+                    if (newVal>26) {
+                        this.suggestion= this.clothes[0];
+                    } else if(newVal<10){
+                        this.suggestion= this.clothes[2];
+                    }else{
+                        this.suggestion=  this.clothes[1];
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

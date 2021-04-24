@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>component-3</title>
+    <script src="../assets/js/vue-2.4.0.js"></script>
+</head>
+<body>
+    <h1>component-3</h1>
+    <hr>
+    <div id="app">
+        {{message}}
+        <!-- 父子组件 -->
+        
+        <huiren :here='message'></huiren>
+    </div>
+
+
+    <script >
+        var cityComponent={
+            template:`<div  style='color:red'>zhejiang of China</div>`
+        }
+        var huirenComponent={
+                template:`<div style="color:green">huiren come from {{here}}
+                    <!-- 子组件必须包含在父组件的模板中 -->
+                <city></city>
+                </div>
+                `,
+                // 定义这个组件的属性
+                props:['here'],
+                components:{
+                    'city':cityComponent,
+                }
+                }
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                message:'China'
+            },
+            // 注：中间加-时，在props中使用小驼峰
+            components:{
+                "huiren":huirenComponent,
+            }
+        })
+        
+
+    </script>
+</body>
+</html>

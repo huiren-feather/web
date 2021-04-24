@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>component-1</title>
+    <script src="../assets/js/vue-2.4.0.js"></script>
+</head>
+<body>
+    <h1>component-1</h1>
+    <hr>
+    <div id="app">
+        {{message}}
+        <!-- 组件就是自定义各种HTML中不存在的标签 -->
+        <jspang></jspang>
+        <huiren></huiren>
+    </div>
+    <div id="app2">
+        {{message}}
+        <!-- 组件就是自定义各种HTML中不存在的标签 -->
+        <jspang></jspang>
+        <huiren></huiren>
+    </div>
+
+    <script >
+        // 1.全局组件，可以在任意Vue中使用
+        Vue.component('jspang',{
+            template:`<div style='color:red'>我是全局的jspang组件</div>`
+        })
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                message:'hello world!11s'
+            },
+            // 2.局部组件，只能在APP这个实例中使用
+            components:{
+                "huiren":{
+                    template:`<div style="color:green">我是局部组件</div>`,
+                }
+            }
+        })
+        
+        var vm2=new Vue({
+            el:'#app2',
+            data:{
+                message:'hello world!11s'
+            },
+
+            
+        })
+    </script>
+</body>
+</html>

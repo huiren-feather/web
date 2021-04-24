@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-pre &v-cloak &v-once</title>
+    <script src="../assets/js/vue-2.4.0.js"></script>
+</head>
+<body>
+    <h1>v-pre &v-cloak &v-once</h1>
+    <hr>
+    <div id="app">
+        <!-- 原样输出 -->
+        <div v-pre>{{message}}</div>
+
+        <div v-cloak>渲染完成后才显示</div>
+        <!-- 只进行一次渲染 ，后面变换就不跟随了-->
+        <div v-once>{{message}}</div>
+        <input type="text" v-model='message'>
+        <div>{{message}}</div>
+    </div>
+
+    <script >
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                message:'hello world!11s'
+            }
+        })
+    </script>
+</body>
+</html>

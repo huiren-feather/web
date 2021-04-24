@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>component-4</title>
+    <script src="../assets/js/vue-2.4.0.js"></script>
+</head>
+<body>
+    <h1>component-4</h1>
+    <hr>
+    <div id="app">
+        {{message}}
+        <!-- 组件标签 -->
+       <!-- vue定义好的标签，用来切换不同的组件,is是component的一个属性 ，用来确定使用哪个组件-->
+        <component :is='who'></component>
+         <button @click='toggle'>切换组件</button>
+    </div>
+
+
+    <script >
+
+        var huiren ={
+            template:`<div style="color:green">huiren come from China</div>`,
+        };
+        var huiren2 ={
+            template:`<div style="color:red">huiren come from China</div>`,
+        };        
+        var huiren3 ={
+            template:`<div style="color:blue">huiren come from China</div>`,
+        };
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                message:'China',
+                who:"huiren"
+            },
+            // 注：中间加-时，在props中使用小驼峰
+            components:{
+                "huiren":huiren,
+                "huiren2":huiren2,
+                "huiren3":huiren3,
+            },
+            methods:{
+                toggle:function(){
+                    if (this.who=='huiren') {
+                        this.who='huiren2';
+                    } else if(this.who=='huiren2'){
+                        this.who='huiren3';
+                    }else{
+                        this.who='huiren';
+                    }
+                }
+            }
+
+        })
+        
+
+    </script>
+</body>
+</html>

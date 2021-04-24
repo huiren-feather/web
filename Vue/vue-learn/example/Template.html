@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template三种写法</title>
+    <script src="../assets/js/vue-2.4.0.js"></script>
+</head>
+<body>
+    <h1>HelloWorld</h1>
+    <hr>
+    <div id="app">
+        {{message}}
+    </div>
+
+    <!-- 第二种：在标签中建模板 -->
+    <template id="d2">
+        <h2 style="color: green;">我是标签模板</h2>
+    </template>
+    <!-- 第三种在script中建模板：可以使用src 直接引用 -->
+    <script type="template" id="d3"> 
+       <h3 style="color: blue;">我是Script标签模板</h3>
+    </script>
+
+    <script >
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                message:'hello Vue!'
+            },
+
+            // 用``，是为了避免模板中很多的单引号和双引号
+            // 模板会替换掉，APP的div
+
+            // 第一种：在实例中建模板
+            // template:`
+            // <h1 style='color:red'>我是选项模板</h1>`
+
+            // 第二的引用
+            template:"#d2",
+            // 第三的引用
+            template:"#d3",
+        })
+    </script>
+</body>
+</html>

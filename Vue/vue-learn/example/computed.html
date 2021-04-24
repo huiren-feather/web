@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelloWorld</title>
+    <script src="../assets/js/vue-2.4.0.js"></script>
+</head>
+<body>
+    <h1>HelloWorld</h1>
+    <hr>
+    目的：在输出之前，对值进行一些改造，比如转换格式、顺序重排、添加符号等，不污染原始数据
+    
+    <div id="app">
+        {{fullPrice}}
+        <ul>
+            <li v-for="item in recentNew">
+                {{item.title}}---{{item.time}}
+            </li>
+        </ul>
+    </div>
+
+    <script >
+        var newList=[
+            {title:'018.propsData Option 全局扩展的数据传递',time:'2017-03-17'},
+            {title:'019.computed Option 计算选项',time:'2017-03-27'},
+            {title:'020.Methods Option 方法选项',time:'2017-03-47'},
+
+        ];
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                price:100,
+            },
+            computed:{
+                fullPrice:function(){
+                    return '￥'+this.price+"元"
+                },
+                recentNew:function(){
+                    return newList.reverse();
+                }
+            },
+            
+        });
+    </script>
+</body>
+</html>

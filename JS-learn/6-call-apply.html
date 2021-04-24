@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // call和apply改变this的指向
+
+        //"use strict"
+        // 非严格模式下，this指向window
+        function f1(x,y){
+            console.log("结果是："+(x+y)+this);
+        }
+        f1(1,1);
+
+        console.log("===============");
+        // 这里f1是当做对象来使用的，调用这两个方法
+        // 相当于调用函数本身，call和apply并没有实际意义
+        f1.call();
+        f1.apply();
+
+        console.log("=================");
+        f1.apply(null);
+        f1.call(null);
+
+        // 不传参数，或者为null，this默认指向window
+
+        console.log("================");
+        f1.apply(null,[1,2]);
+        f1.call(null,1,3);
+
+        // 修改this，指向为f1
+        f1.call(f1,1,5);
+
+        var obj={
+            age:10,
+            gender:"male"
+        }
+        // 修改this，指向obj
+        f1.call(obj,1,6);
+
+        // 所有的函数都是Function 的实例对象
+        // 而call、apply都是Function的原型对象
+
+    </script>
+</body>
+</html>

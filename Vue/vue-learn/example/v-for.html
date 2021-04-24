@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-for</title>
+    <script src="../assets/js/vue-2.4.0.js"></script>
+</head>
+<body>
+    <h1>v-for</h1>
+    <hr>
+    <div id="app">
+
+        <ul>
+            <li v-for="item in sortItems">
+                {{item}} 
+            </li>
+        </ul>
+        <hr>
+        <ul>            <!--值，索引-->
+            <li v-for='(student,index) in sortStudents'>
+               {{index}}： {{student.name}}---{{student.age}}
+            </li>
+        </ul>
+    </div>
+
+    <script >
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                 items:[21,23,232,435,45,656,45],
+                 students:[
+                    {name:'rl',age:33},
+                    {name:'hr',age:38},
+                    {name:'wb',age:26},
+                    {name:'hh',age:24},
+                 ]
+            },
+            // 在输出之前计算
+            computed:{
+                sortItems:function(){
+                    return this.items.sort(sortNumber);
+                },
+                sortStudents:function(){
+                    return sortByKey(this.students,'age');
+                }
+            }
+        });
+        // js的排序缺陷，通过这个函数来解决
+        function sortNumber(a,b){
+            return a-b;
+        }
+        // 对象数组的排序
+        function sortByKey(array,key){
+            return array.sort(function(a,b){
+                var x=a[key];
+                var y=b[key];
+                return ((x<y)?-1:((x>y)?1:0));
+            })
+        }
+    </script>
+</body>
+</html>
