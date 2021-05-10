@@ -6,11 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="mycss.css">
+    <base target="_blank" >
     <style>
-        
+        .bgc {
+            width: 500px;
+            height: 500px;
+            background-image: url(../JS学习内容.png);
+            background-position: 0 -100px;
+            background-attachment: scroll;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: skyblue;
+        }
+        a {
+            text-decoration: none;
+        }
+        address {
+            font-style: normal;
+        }
     </style>
 </head>
 <body>
-    
+    <div class="bgc"></div>
+    <a href="http://www.baidu.com">百度</a>
+    <blockquote>
+        长文本引用
+    </blockquote>
+    <address>
+        变成斜体
+        这是个设计费水泥沙
+    </address>
+    <code>
+        var a=0;
+        a++;
+        console.log(a);
+    </code>
+    <pre>
+        var a=0;
+        a++;
+        console.log(a);
+     
+    </pre>
 </body>
 </html>
