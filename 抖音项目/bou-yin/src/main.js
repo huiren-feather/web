@@ -4,7 +4,7 @@ import App from './App.vue'
 import router from './router'
 import 'lib-flexible/flexible';
 import 'normalize.css';
-import Topbar from './compnents/topbar/TopBar.vue';
+import Topbar from './components/topbar/Topbar.vue';
 //  全屏滚动组件
 import VueSwiper from 'vue-awesome-swiper';
 import 'swiper';

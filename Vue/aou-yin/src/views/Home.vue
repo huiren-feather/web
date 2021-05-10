@@ -1,18 +1,18 @@
 <template>
   <div class="home">
     <router-view></router-view>
-    <!-- <Tabbar></Tabbar> -->
+    <Tabbar></Tabbar>
   </div>
 </template>
 
 <script>
-// import Tabbar from 'components/home/Tabbar';
+import Tabbar from '../common/components/tab/Tabbar';
 
 export default {
   name: 'Home',
-  // components: {
-  //   Tabbar,
-  // },
+  components: {
+    Tabbar,
+  },
 };
 </script>
 <style lang="less" scoped>

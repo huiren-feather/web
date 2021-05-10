@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset="UTF-8">
+        <title>标签尝试</title>
+    </head>
+    <body>  
+        <header>页眉</header>
+        <hr>
+        <main>
+            下面的是主题
+            <p>我是一个段落</p>
+            <a href="www.baidu.com"></a>
+            <table border="1px" cellpadding='0px' cellspacing='0px'>
+                <tr>
+                    <caption>我是表名</caption>
+                    <th>表头一</th>
+                    <th>表头一</th>
+                    <th>表头一</th>
+                    <th>表头一</th>
+                </tr>
+                <tr>
+                    <td>单元格</td>
+                    <td>单元格</td>
+                    <td>单元格</td>
+                    <td>单元格</td>
+                </tr> 
+                <tr>
+                    <td>单元格</td>
+                    <td>单元格</td>
+                    <td>单元格</td>
+                    <td>单元格</td>
+                </tr> 
+                <tr>
+                    <td>单元格</td>
+                    <td>单元格</td>
+                    <td>单元格</td>
+                    <td>单元格</td>
+                </tr>
+            </table>
+            <!-- 列表 -->
+            <UL>
+                <li>我是无序列表</li>
+                <li>我是无序列表</li>
+                <li>我是无序列表</li>
+                <li>我是无序列表</li>
+                <li>我是无序列表</li>
+            </UL>
+            <ol>
+                <li>我是有序列表</li>
+                <li>我是有序列表</li>
+            </ol>
+            <dl>
+                    <dt>名称</dt>
+                    <dd>解释</dd>
+                    <dd>解释</dd>
+                    <dd>解释</dd>
+                
+                <dt>xx</dt>
+                    <dd>yy</dd>
+                    <dd>yy</dd>
+                    <dd>yy</dd>
+                
+            </dl>
+
+            <form action="www.baidu.com" method="get">
+                <h3>表单域</h3>
+                <!-- label中for的是id -->
+                <label for="username">账户：</label>
+                <input type="text" value="请输入用户名" id="username" name="uname">
+                <label for="password">密码：</label>
+                <input type="password" id="password" name="password">
+
+                <textarea name="mycontext" id="" cols="30" rows="10"></textarea>
+                <input type="submit">
+
+                <fieldset>
+                    <legend>请选择你的爱好：</legend>
+                    <select name="myhobby" id="">
+                        <optgroup label='运动' value='sport'>
+                            <option value="篮球">篮球</option>
+                            <option value="瑜伽">瑜伽</option>
+                        </optgroup>
+                        <optgroup label='音乐'>
+                            <option value="民谣">民谣</option>
+                            <option value="轻音乐">轻音乐</option>
+                            <option value="美声">美声</option>
+                        </optgroup>
+                    </select>
+
+                    <!-- 下拉列表 -->
+                    <input list="browsers">
+                    <datalist id="browsers">
+                        <option value="Inter">
+                        <option value="Firef">
+                        <option value="Chrom">
+                        <option value="Opera">
+                        <option value="Safar">
+                    </datalist>
+                </fieldset>
+                <input list="browsers">
+                <datalist id="browsers">
+                    <option value="Internet Explorer">
+                    <option value="Firefox">
+                    <option value="Chrome">
+                    <option value="Opera">
+                    <option value="Safari">
+                </datalist>
+
+                <!-- 单选框:name做为唯一性判断 -->
+                <input type="radio" name='gender' id="male" value="male" checked>
+                <label for="male">male</label>
+                <input type="radio" name="gender" id="female" value="female">
+                <label for="female">female</label>
+
+                <!-- 复选框：同上 -->
+                <input type="checkbox" name="vehicle" id="bike" value="bike">
+                <label for="bike">I have a bike</label>            
+                <input type="checkbox" name="vehicle" id="car" value="car">
+                <label for="car">I have a car</label>
+
+               
+            </form>
+            <!-- 框架标签：用于在网页中打开网页  -->
+            <iframe src="https://www.baidu.com" frameborder="0" ></iframe>
+            <hr>
+            <!-- 音频标签两种用法 -->
+            <audio src="../../Music/2020.9月麦乐阶段一/男生C大调(1).mp3" controls="controls">我是MP3</audio>
+
+            <audio controls>
+                <source src="../../Music/阶段二小小/wu音练习音阶.mp3">
+                <source src="../../Music/阶段二小小/哼鸣_1.mp3">
+            </audio>
+
+            <!-- 视频标签：同上 -->
+            <video width="320" height="240" controls>
+                <source src="../../Music/2021.3月七克阶段二/01正确的呼吸方式.wmv" >
+                <!-- <source src="movie.ogg" type="video/ogg"> -->
+                  您的浏览器不支持 Video 标签。
+                  video 元素支持三种视频格式：MP4、WebM、Ogg
+            </video>
+          
+            <code>sfjasi</code>
+        </main>
+        <hr>
+
+        <footer>页脚</footer>
+    </body>
+</html>

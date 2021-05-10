@@ -845,7 +845,7 @@ caption 标签必须紧随 table 标签之后。您只能对每个表格定义�
 
 4. 表格不要纠结于外观，那是CSS 的作用。
 
-   ​
+   
 
    **表格的学习要求：  能手写表格结构，并且能合并单元格。**
 
@@ -988,7 +988,7 @@ for 属性规定 label 与哪个表单元素绑定。
   <aside> 语义： 定义其所处内容之外的内容 侧边</aside>
   ~~~
 
-  ​
+  
 
 - datalist   标签定义选项列表。请与 input 元素配合使用该元素
 
@@ -1004,7 +1004,7 @@ for 属性规定 label 与哪个表单元素绑定。
   </datalist>
   ~~~
 
-  ​
+  
 
 - fieldset 元素可将表单内的相关元素分组，打包      legend 搭配使用
 
@@ -1016,7 +1016,7 @@ for 属性规定 label 与哪个表单元素绑定。
   </fieldset>
   ~~~
 
-  ​
+  
 
 ## 新增的input type属性值：
 
@@ -1122,7 +1122,7 @@ embed可以用来插入各种多媒体，格式可以是 Midi、Wav、AIFF、AU�
 <embed src="http://player.youku.com/player.php/sid/XMTI4MzM2MDIwOA==/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
 ```
 
-​
+
 
  <img src="media/embed.png" />
 
