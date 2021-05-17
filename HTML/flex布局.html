@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            display: flex;
+            height: 300px;
+            flex-direction: row-reverse;
+            background-color: #ccc;
+            /* justify-content: space-around; */
+            /* align-items: flex-end; */
+            flex-wrap: wrap;
+            align-content: space-around;
+            flex-flow: row wrap-reverse;/*方向，包*/
+        }
+        .item {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+        .q2 {
+            order: -1;/*顺序，越小越靠前，不怎么用*/
+            align-self: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="item q1">1</div>
+        <div class="item q2">2</div>
+        <div class="item">3</div>
+        <div class="item">4ss</div>
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

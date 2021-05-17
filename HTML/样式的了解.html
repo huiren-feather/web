@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="mycss.css">
     <base target="_blank" >
     <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
         .bgc {
             width: 500px;
             height: 500px;
@@ -17,6 +21,30 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-color: skyblue;
+            border: 1px dotted red;
+            /* 圆角 */
+            border-radius: 50%;
+            /* div盒子水平居中 */
+            margin: 0 auto;
+            /*  */
+            text-align: center;
+            box-shadow: 3px 3px 3px 100px greenyellow;
+            /* 过渡 */
+            transition: all 1s ease 0.5s;
+            /* 变形 */
+        }
+        .bgc:hover {
+            width: 300px;
+            height: 300px;
+            transform: translate(200px,200px);
+            transform: scale(2,0.5);
+            transform: rotate(45deg);
+            transform: skew(30deg);
+        }
+        .gra {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(to right,red,blue);
         }
         a {
             text-decoration: none;
@@ -24,10 +52,31 @@
         address {
             font-style: normal;
         }
+        ul li {
+            list-style: none;
+            float: left;
+        }
+        ul li a{
+            display: inline-block;
+            text-decoration: none;
+            background: url(../学习路线图.png) no-repeat;
+            font-size: 20px;
+            padding-left: 15px;
+            line-height: 33px;
+            border-radius: 50% ;
+        }
+        ul li a span {
+            display: inline-block;
+            background: url(../学习路线图.png) no-repeat right;
+             padding-right: 15px;
+             border-radius: 50% ;
+        }
+
     </style>
 </head>
 <body>
-    <div class="bgc"></div>
+    <div class="bgc">我是盒子</div>
+    <div class="gra">渐变演示</div>
     <a href="http://www.baidu.com">百度</a>
     <blockquote>
         长文本引用
@@ -47,5 +96,11 @@
         console.log(a);
      
     </pre>
+    <!-- 滑动门 -->
+    <ul>
+        <li><a href=""><span>首页</span></a></li>
+        <li><a href=""><span>购物车</span></a></li>
+        <li><a href=""><span>我的订单</span></a></li>
+    </ul>
 </body>
 </html>

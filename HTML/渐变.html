@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+           width: 400px;
+           height: 400px; 
+        }
+        /* 线性渐变  ：从线到线 */
+        .gra1 {
+            background: linear-gradient(to right bottom ,green ,skyblue);
+        }
+        .gra2 {
+            background:linear-gradient(20deg,pink, blue);
+        }
+        /* 径向渐变 ：从点到四周*/
+        .gra3 {
+                                /*                  位置 */
+            background: radial-gradient(  40%60% at 60px 45px,red,green,blue 50%);
+        }
+        /* 重复渐变 */
+        /* 1.线性重复 */
+        .gra4 {
+            background: repeating-linear-gradient(red ,green 10%,blue 20%);
+        }
+        /* 2.径向重复 */
+        .gra5 {
+            background: repeating-radial-gradient(red,yellow 10%,green 20%);
+        }
+    </style>
+</head>
+<body>
+    <div class="gra1"></div>
+    <div class="gra2"></div>
+    <div class="gra3"></div>
+    <div class="gra4"></div>
+    <div class="gra5"></div>
+</body>
+</html>

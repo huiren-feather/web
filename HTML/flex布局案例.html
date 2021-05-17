@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            background-color: #ccc;
+            height: 600px;
+            /* width: 600px; */
+            display: flex;
+            flex-flow: row wrap;
+            justify-content:space-evenly;
+            align-items: center;
+            
+        }
+        .item {
+            width: 100px;
+            height: 120px;
+            border: 1px solid red;
+            background-color: skyblue;
+        }
+        .one {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .item-one {
+            display: block;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: yellow;
+        }
+        .two {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .two span {
+            display: block;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: yellow;
+        }
+        .three {
+            display: flex;
+            justify-content: space-between;
+            /* align-items: center;
+            align-content: space-around; */
+        }
+        .three span {
+            margin: 2px;
+            display: block;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: yellow;
+        }
+        .three2 {
+            align-self: center;
+        }
+        .three3 {
+            align-self: flex-end;
+        }
+        .five {
+            display: flex;
+            justify-content: space-around;
+        }
+        .five1 ,.five3 {
+            display: flex;
+            flex-direction: column;
+            /* align-items: flex-start; */
+            justify-content: space-between;
+            margin: 3px;
+        }
+        .five2 {
+            align-self: center;
+        }
+        /* .five3 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 3px;
+            align-items: flex-end; 
+        } */
+        .five span {
+            margin: 2px;
+            display: block;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: yellow;
+        }
+        .six {
+            display: flex;
+            justify-content: space-around;
+        }
+        .six span {
+            margin: 2px;
+            display: block;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: yellow;
+        }
+        .six div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item one">
+            <span class="item-one"></span>
+        </div>
+        <div class="item two">
+            <span class="two1"></span>
+            <span class="two2"></span>
+        </div>
+        <div class="item three">
+            <span class="three1"></span>
+            <span class="three2"></span>
+            <span class="three3"></span>
+        </div>
+        <div class="item five">
+            <div class="five1">
+            <span></span> <span></span>
+        </div>
+
+        <div class="five2"><span> </span></div>
+
+         <div class="five3"><span></span><span></span></div>
+        </div>
+        <div class="item six">
+            <div><span></span><span></span><span></span></div>
+            <div><span></span><span></span><span></span></div>
+        </div>
+    </div>
+</body>
+</html>

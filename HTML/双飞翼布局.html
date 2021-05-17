@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            min-width: 550px;
+        }
+        header,footer  {
+            background-color: pink;
+            height: 100px;
+        }
+
+        .container {
+            background-color: #ccc;
+            overflow: hidden;
+        }
+        .left,.right,.center {
+            float: left;
+            height: 300px;
+        }
+        .center {
+            width: 100%;
+            /* padding: 0 200px  0 200px; */
+        }
+        .left {
+            width: 200px;
+            background-color: skyblue;
+            margin-left: -100%;
+        }
+        .right {
+            width: 200px;
+            background-color: red;
+            margin-left: -200px;
+        }
+        .content {
+            margin:  0 200px 0 200px;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <div class="container">
+        <div class="center">
+      
+      <div class="content">#center
+        大致要求是：
+
+        header和footer固定高度；
+        左右两边固定宽度；
+        中间宽度自适应；
+        中间部分的高度是三栏中最高的区域的高度。
+        实现过程（顺序无所谓）：
+        1、先定义好header 和footer，container 和其中的left , right ,middle.其中middle在最前面
+        ————————————————
+        版权声明：本文为CSDN博主「铁柱ef」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+        原文链接：https://blog.csdn.net/qq_40890601/article/details/106210257
+              
+      </div>
+        </div>
+        <div class="left">
+            left
+        </div>
+        <div class="right">
+            right
+        </div>
+    </div>
+    <footer></footer>
+</body>
+</html>
