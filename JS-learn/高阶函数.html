@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 高阶函数：操作其他函数的函数
+        // 1.把函数作为参数
+        // 2.把函数作为返回值
+
+        function fn1(a,b,callback){
+            console.log(a+b);
+
+            callback && callback();
+        }
+
+        fn1(1,2,function(){
+            console.log('我是最后执行的函数');
+        });
+
+        function fn2(){
+            let a=20;
+        return function() {
+            console.log(a);
+        };
+        }
+
+        let foo=fn2();
+        console.log(foo);
+        console.log(foo());
+        foo();
+    </script>
+</body>
+</html>

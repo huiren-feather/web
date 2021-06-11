@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            margin: 0;
+            padding: 5px;
+            height: 300px;
+            background-color: #ddd;
+            position: relative;
+        }
+
+        button {
+            margin: 5px;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 195px;
+            top: 40px;
+        }
+
+        .box3 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            position: absolute;
+            left: 0;
+            top: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <button>运动到 left = 200px</button>
+        <button>运动到 left = 400px</button>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+    <script>
+        let btnArr = document.querySelectorAll('button');
+        let box2 = document.querySelector('.box2');
+        let box3 = document.querySelector('.box3');
+
+        btnArr[0].onclick=function(){
+            animate(box2,200);
+            animate(box3,200);
+        }
+
+        btnArr[1].onclick=function(){
+            animate(box2,400);
+            animate(box3,400);
+        }
+        function animate(ele, target) {
+            // 先清除定时器
+            clearInterval(ele.timer);
+            // 规定步长
+            let speed = target > ele.offsetLeft ? 10 : -10;
+            // 设置定时器,间隔为30ms
+            ele.timer = setInterval(function () {
+                // 计算距离目的地还有多少距离
+                let val = target - ele.offsetLeft;
+
+                // 是否到目的地
+                if (Math.abs(val) < Math.abs(speed)) {
+                    ele.style.left = target + 'px';
+                    clearInterval(ele.timer);
+                } else {
+                    // 走你
+                    ele.style.left = ele.offsetLeft + speed + 'px';
+
+                }
+            }, 30);
+        }
+    </script>
+</body>
+
+</html>

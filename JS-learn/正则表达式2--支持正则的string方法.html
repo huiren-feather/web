@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // split()  search()  match() replace()
+
+        // 例：根据任意字母，将字符串拆分成数组
+        let str='1a2b4343n434343k43n4m343';
+        let result=str.split(/[A-z]/);
+        console.log(result);
+        
+        // 例：查找指定内容
+        var str1 = "hello abc hello aec afc";
+        result =str1.search(/a[bef]c/);
+        console.log(result);
+
+        // 例：找出符合条件的内容，以数组的形式返回
+        var str2 = "1a2a3a4a5e6f7A8B9C";
+        var result1=str2.match(/[a-z]/);
+        var result2=str2.match(/[a-z]/g);
+        var result3=str2.match(/[a-z]/gi);
+
+        console.log(result1);
+        console.log(result2);
+        console.log(result3);
+
+        // 例：替换相应的内容
+        var str3 = "Today is fine day,today is fine day !!!";
+        console.log(str3);
+        console.log(str3.replace('today','tomorrow'));
+        console.log(str3.replace(/today/gi,'tomorrow'));
+
+        //检查一个字符串是否是一个合法手机号
+        let phoneStr='12067890123';
+        let phoneReg=/^1[3-9][0-9]{9}$/;
+        console.log(phoneReg.test(phoneStr));
+
+        // 去掉字符串开头和结尾的空格
+        str=str.replace(/^\s*|\s*$/g,'');
+
+        // 判断字符串是否为电子邮件
+        var emailReg=/^\w{3,}(\.\w+)*@[A-z0-9]+(\.[A-z]{2,5}){1,2}$/;
+        var email='nfjkaui.23j@211.com.cn'
+        console.log(emailReg.test(email));
+    </script>
+</body>
+</html>

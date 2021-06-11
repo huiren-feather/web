@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function foo() {
+            console.log(arguments);
+            console.log(typeof arguments);
+        }
+
+        foo();
+
+        // arguments.length存的是所有实参
+        fn(2,3);
+        fn(2,3,4);
+        fn(2,3,5,6);
+        fn(2,3,3,2,4);
+
+        function fn(a,b){
+            console.log(arguments);
+            console.log(arguments.length);
+            console.log(fn.length);
+            console.log('-------------');
+        }
+
+        // arguments.callee:返回正在执行的函数
+        
+        function fun() {
+            console.log(arguments.callee==fun);
+        }
+        fun('hello');
+
+        // arguments 可以修改元素，但不能改变数组的长短
+        fn1(2,3);
+        fn1(2,3,4);
+        fn1(2,3,5,6);
+        fn1(2,3,3,2,4);
+
+        function fn1(){
+            arguments[0]=99; 
+            console.log(arguments);
+            // arguments.push(8);
+           
+        }
+        //小案例：求实参中的最大值
+        function getMaxvalue(){
+            let max=arguments[0];
+            for(let i=0;i<arguments.length;i++){
+                max=max<arguments[i]?arguments[i]:max;
+            }
+            console.log(max);
+        }
+
+        getMaxvalue();
+        
+
+    </script>
+</body>
+
+</html>

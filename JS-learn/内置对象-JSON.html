@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // js对象
+        let a={
+            id:1,
+            name1:'小商品',
+            img:'./a.jpg'
+        };
+        console.log(a);
+        // 转化成json对象
+        let b=JSON.stringify(a);
+        console.log(b);
+        // 转化为js对象
+        console.log(JSON.parse(b));
+    </script>
+</body>
+</html>

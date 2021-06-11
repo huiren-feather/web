@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建对象
+        // 1.构造函数创建对象
+        // 传一个参数
+        let reg=new RegExp('a');
+        let str1='qianguyihai';
+        let str2='smyh';
+        // 判断字符串是否符合指定的正则表达式
+        console.log(reg.test(str1));
+        console.log(reg.test(str2));
+
+        // 传两个参数
+        let reg1=new RegExp('A','i');
+        let str='qiangu';
+        console.log(reg1.test(str));
+
+        // 2.字面量创建对象
+        let reg2=/A/i;
+        let str3='yuanhonghui';
+        console.log(typeof reg2);
+        console.log(reg2.test(str3));
+
+        // 坑：全局匹配g慎用test()方法
+        const reg3=/test/g;
+        const str4='_test_test';
+
+        console.log(reg3.test(str4));
+        console.log(reg3.lastIndex);
+        console.log(reg3.test(str4));
+        console.log(reg3.lastIndex);
+        console.log(reg3.test(str4));
+        console.log(reg3.lastIndex);
+
+        // g  如果用于test()方法会有问题，因为g模式会生成一个lastindex参数来存储匹配最后一次的位置
+
+        // g 一般用于exec() match() replace()
+
+        // [^]   :除了
+        // 例:验证字符串是否是纯数字
+        
+        let r=/[^0-9]/;
+        let s='1001',s1='s2322';
+
+        console.log(r.test(s));//false
+        console.log(r.test(s1));//true
+
+        
+    </script>
+</body>
+</html>

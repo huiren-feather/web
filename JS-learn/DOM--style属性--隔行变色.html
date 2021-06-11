@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .wrap {
+            width: 500px;
+            margin: 100px auto 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #c0c0c0;
+            width: 500px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d0d0d0;
+            color: #404060;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #09c;
+            font: bold 16px "微软雅黑";
+            color: #fff;
+        }
+
+        td {
+            font: 14px "微软雅黑";
+        }
+
+        tbody tr {
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>姓名</th>
+                    <th>课程</th>
+                    <th>成绩</th>
+                </tr>
+            </thead>
+            <tbody id="target">
+                <tr>
+                    <td>
+                        1
+                    </td>
+                    <td>生命壹号</td>
+                    <td>语文</td>
+                    <td>100</td>
+
+                </tr>
+                <tr>
+                    <td>
+                        2
+                    </td>
+                    <td>生命贰号</td>
+                    <td>日语</td>
+                    <td>99</td>
+                </tr>
+                <tr>
+                    <td>
+                        3
+                    </td>
+                    <td>生命叁号</td>
+                    <td>营销学</td>
+                    <td>98</td>
+                </tr>
+                <tr>
+                    <td>
+                        4
+                    </td>
+                    <td>生命伍号</td>
+                    <td>数学</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>
+                        5
+                    </td>
+                    <td>许嵩</td>
+                    <td>英语</td>
+                    <td>96</td>
+                </tr>
+                <tr>
+                    <td>
+                        6
+                    </td>
+                    <td>vae</td>
+                    <td>体育</td>
+                    <td>90</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        let tbody = document.getElementById('target');
+        let trArr = tbody.children;
+        console.log(trArr);
+        // console.log(    window.getComputedStyle("tbody", null));
+
+        // 循环判断，并隔行赋值
+        for (let i = 0; i < trArr.length; i++) {
+            if (i % 2 === 0) {
+                trArr[i].style.backgroundColor = '#a3a3a3';
+            } else {
+                trArr[i].style.backgroundColor = '#ccc';
+            }
+
+            // 鼠标进入，高亮显示
+            // 计数器：记住原始颜色
+            let myColor = '';
+            trArr[i].onmouseover=function(){
+                myColor=this.style.backgroundColor;
+                this.style.backgroundColor='#fff';
+            }
+            trArr[i].onmouseout=function(){
+                this.style.backgroundColor=myColor;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

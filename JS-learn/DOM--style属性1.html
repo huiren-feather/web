@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            display: block;
+            margin-top: 30px;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <script>
+        var inputArr=document.querySelectorAll('input');
+        console.log(inputArr);
+        // 方法1：循环会自动触发？？？
+        for(let i=0;i<inputArr.length;i++){
+            
+            inputArr[i].onfocus=function(){
+                this.style.border='2px solid red';
+                this.style.backgroundColor='#ccc';
+            }
+
+            inputArr[i].onblur=function(){
+                this.style.border='';
+                this.style.backgroundColor='';
+            }
+        // 方法2：我觉得更容易
+
+
+        }
+
+
+
+    </script>
+</body>
+</html>

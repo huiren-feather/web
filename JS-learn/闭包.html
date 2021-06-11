@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function foo(){
+            let a=-1
+        }
+        foo();
+        // console.log(a);
+
+        //闭包:有权访问另一个函数作用域中变量的函数
+
+        function fn1(){
+            let a=19;
+            function fn2(){
+                console.log(a);
+            }
+            fn2();
+        }
+        fn1();
+
+        // 上述例子，fn2的作用域访问量fn1的变量，此时fn1就产生了闭包，fn1就是闭包函数
+
+        // 闭包的作用：延伸变量的作用范围，全局变量可以访问到局部变量
+        function fn3(){
+            let a=23;
+
+            return function(){
+                console.log(a);
+            }
+        }
+
+        let fo=fn3();
+        fo();
+    </script>
+</body>
+</html>

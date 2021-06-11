@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 6000px;
+            width: 5000px;
+
+        }
+    </style>
+</head>
+<body>
+    <script >
+        window.onscroll=function(){
+            console.log(scroll().top);
+            console.log(scroll().left);
+        }
+
+        function scroll(){
+            return {
+                top:window.pageYOffset||document.body.scrollTop||document.documentElement.scrollTop,
+                left:window.pageXOffset||document.body.scrollLeft||document.documentElement.scrollLeft
+            }
+        }
+    </script>
+</body>
+</html>

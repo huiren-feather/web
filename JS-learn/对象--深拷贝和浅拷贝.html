@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 浅拷贝
+        // 1.遍历复制
+        const obj1 = {
+            name: 'qianguyihao',
+            age: 28,
+            info: {
+                desc: '很厉害',
+            },
+        };
+
+        const obj2 = {};
+        //  用 for in 将 obj1 的值拷贝给 obj2
+        for (let key in obj1) {
+            obj2[key] = obj1[key];
+        }
+
+        // 2.Object.assgin(目标对象，源对象1，源对象2，。。。)
+        // 如果属性有重复，后面对象的属性值会覆盖前面的
+        let obj3={};
+        obj3 = Object.assgin(obj3, obj1);
+
+
+        // 深拷贝：比较复杂，有很多的方法和问题，暂时没有解决办法
+        // 1.将浅拷贝进行递归
+        function deepCopy(newObj,oldOdj){
+            for(let key in oldOdj){
+                let item=oldOdj[key];
+                // 当为数组时
+                if (item instanceof Array) {
+                    newObj[key]=[];
+                    deepCopy(newObj[key],item);
+                    // 当为对象时
+                }else if (item instanceof Object) {
+                    newObj[key]={};
+                    deepCopy(newObj[key],item);
+                }else {
+                    newObj[key]=item;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

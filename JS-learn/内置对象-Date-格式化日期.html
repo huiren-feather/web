@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function formatDate() {
+            let date=new Date();
+
+            let year=date.getFullYear(),
+                month=date.getMonth()+1,
+                day=date.getDate(),
+                hour=date.getHours(),
+                minute=date.getMinutes(),
+                second=date.getSeconds(),
+                week=date.getDay();
+            let weekArr=['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            month=month<10?'0'+month:month;
+            day=day<10?'0'+day:day;
+            hour=hour<10?'0'+hour:hour;
+            minute=minute<10?'0'+minute:minute;
+            second=second<10?'0'+second:second;
+
+            let result="今天是："+year+'年'+month+'月'+day+'日  '+hour+':'+minute+':'+second+'  '+weekArr[week];
+
+            return result;
+
+        }
+        console.log(formatDate());
+    </script>
+</body>
+
+</html>

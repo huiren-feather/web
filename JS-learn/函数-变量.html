@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function foo() {
+            var a = b = 100; // 连续赋值
+        }
+
+        foo();
+
+        console.log(window.b); // 在全局范围内访问 b
+        console.log(b); // 在全局范围内访问 b，但是前面没有加 window 这个关键字
+
+        console.log(window.a); // 在全局范围内访问 a
+        console.log(a); // 在全局范围内访问 a，但是前面没有加 window 这个关键字
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li></li>
+    </ul>
+    <script>
+        // 获取节点
+        let ul=document.querySelector('ul');
+        // 创建节点
+        let li=document.createElement("li");
+         console.log(li);
+         console.log(typeof li);
+
+        //  插入节点
+        // ul.appendChild(li);
+        // null的位置填参考节点，为null时，就会插入到最后
+        ul.insertBefore(li,null);
+
+        // 删除节点
+        // ul.removeChild(li);
+
+        // 复制节点:参数为true，会复制字节；否则不会
+
+        ul.cloneNode();
+
+        // 获取节点属性
+        li.getAttribute("class");
+
+        // 设置节点属性
+        li.setAttribute("class",'f-li');
+
+
+        //删除节点属性
+        li.removeAttribute("class"); 
+
+    </script>
+</body>
+</html>

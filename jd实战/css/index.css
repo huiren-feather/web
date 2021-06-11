@@ -1,1 +1,269 @@
 /* 京东首页 */
+.jd {
+    height: 480px;
+    /* background-color: pink; */
+    position: relative;
+}
+.jd-inner {
+    height: 480px;
+    /* background-color: skyblue; */
+    position: relative;/*只有相对定位才不会转化为行内块*/
+    /* top: 0;
+    left: 0; */
+    z-index: 1;
+}
+.ad {
+    height: 480px;
+    background: url(../images/bg.png) no-repeat top center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;/*定位时会转化为行内块，所以一定要加宽度*/
+    /* z-index: -1; */
+}
+.ad a {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+/*  */
+ .jd-clo1 {
+    width: 190px;
+    height: 465px;
+    background-color: #6e6568;
+    float: left;
+    padding-top: 15px;
+}
+.jd-clo1 li {
+    padding-left: 10px;
+    height: 28px;
+    line-height: 28px;
+}
+.jd-clo1 li:hover {
+    background-color: #999395;
+}
+.jd-clo1 li a,span {
+    color: #fff;
+    font-size: 14px;
+}
+.jd-clo2 {
+    width: 790px;
+    height: 480px;
+    /* background-color: purple; */
+    float: left;
+    margin-left: 10px;
+}
+
+.jd-clo2-hd  {
+    height: 340px;
+    background-color: pink;
+    margin-bottom: 10px;
+    position: relative;
+}
+.jd-clo2-bd div {
+    width: 390px;
+    height: 130px;
+    float: left;
+}
+.jd-clo2-bd div img {
+    width: 100%;
+
+}
+.firstPic {
+    padding-right: 10px;
+}
+.arr-l::before {
+    content: "\ea53";
+    font-size: 30px;
+}
+.arr-l,.arr-r {
+    font-family: "icomoon";
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;/*保证垂直居中*/
+    width: 30px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+}
+.arr-l {
+    left: 0;
+}
+.arr-r::before {
+    content: "\ea52";
+    font-size: 30px;
+}
+.arr-r {
+    right: 0;
+}
+
+.jd-clo2-hd ol {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -90px;
+    width: 180px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+.jd-clo2-hd ol li  {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    float: left;
+    margin: 4px 5px;
+}
+
+.jd-clo2-hd ol .current {
+    background-color: #f10215;
+}
+
+.jd-clo3 {
+    width: 190px;
+    height: 480px;
+    /* background-color: yellow; */
+    float: right;
+}
+
+.jd-clo3 a {
+    font-size: 12px;
+    color: #747474;
+}
+.jd-clo3  .user {
+    height: 95px;
+    padding: 20px 15px 0;
+    /* background-color: pink; */
+}
+
+.user .user-info {
+    height: 40px;
+    /* 给外边距，挤文字，用于房图片 */
+    padding-left: 54px;
+    /* background-color: skyblue; */
+    font-size: 12px;
+    color: #747474;
+    line-height: 22px;
+    position: relative;
+}
+.user .user-info a{
+    font-size: 12px;
+    color: #747474;
+
+}
+.user .user-info a:hover {
+    color: #f10215;
+}
+.info-img {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.info-img  img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+.user-profit {
+    margin-top: 14px;
+}
+
+.user-profit a {
+    width: 70px;
+    height: 20px;
+    border: 3px solid #f10215;
+    display: inline-block;
+    color: #f10215;
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+    margin-right: 1px;
+}
+.user-profit a:hover {
+    background-color: #f10215;
+    color: #fff;
+} 
+.news {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc ;
+    height: 149px;
+    /* background-color: purple; */
+    padding: 5px 15px 0;
+}
+.news .tab-hd {
+    border-bottom: 1px solid #ccc;
+    padding: 3px 0;
+    position: relative;
+}
+.news .tab-hd  a {
+    font-size: 12px;
+    color: #747474;
+    margin: 0 2px;
+}
+.cuxiao {
+    border-right: 1px solid #ccc;
+    padding-right: 10px;
+}
+.news .more {
+    position: absolute;
+    top: 8px;
+    right: 0;
+}
+/* 红色短线 */
+.line {
+    width: 28px;
+    height: 2px;
+    background-color: #f10215;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+.tab-bd {
+    margin-top: 10px;
+}
+.tab-bd li{
+    height: 23px;
+    line-height: 23px;
+}
+
+.jd-service {
+    height: 209px;
+    overflow: hidden;
+    /* background-color: skyblue; */
+}
+/* 给ul加一个比父盒子宽一些的宽度，为了一行放下4个li */
+.jd-service ul {
+    width: 200px;
+}
+.jd-service li {
+    width: 47px;
+    height: 69px;
+    /* background-color: purple; */
+    float: left;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+/* .jd-service li:nth-child(4n){
+    border-right: 0;
+}  */
+.jd-service li a{
+    width: 100%;
+    height: 100%;/*根据父亲*/
+    display: block;
+}
+.jd-service li a i {
+    display: block;
+    font-style: normal;
+    width: 24px;
+    height: 24px;
+    margin: 15px auto 8px;
+    background: url(../images/sprite_fs@1x.png) no-repeat;
+}
+.jd-service li a p {
+    text-align: center;
+}

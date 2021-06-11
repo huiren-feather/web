@@ -46,6 +46,18 @@
         // 所有的函数都是Function 的实例对象
         // 而call、apply都是Function的原型对象
 
+        // apply的巧妙用法
+        // apply(指向对象,[value1,...])
+
+        // 求最大最小值
+
+        let arr1=[3,7,10,4];
+        let maxValue=Math.max.apply(this,arr1);
+        console.log(maxValue);
+
+        let minValue=Math.min.apply(null,arr1);
+        console.log(minValue);
+
     </script>
 </body>
 </html>

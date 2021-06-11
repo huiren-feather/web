@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. toString() 和 join() 一样
+        let arr=[1,24,35,435,4,543,54,3];
+        let result=arr.toString();
+        console.log(result);
+        console.log(arr);
+
+        // 2.提取数组指定深度的方法
+        let arr1=[3,435,[3,5,[4334,543,[34543,345],3453543]]]
+        let result2=arr1.flat(Infinity);
+        let result1=arr1.flat();
+        console.log(result2);
+        console.log(result1);
+    </script>
+</body>
+</html>

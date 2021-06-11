@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 不带参数
+        let date1 = new Date();
+        console.log(date1);
+        console.log(date1.valueOf());
+        console.log(date1.toString());
+        console.log(typeof date1);
+
+        // 带参数
+        let date2 = new Date('2021/4/3');
+        console.log(date2);
+        let date3 = new Date('2021-5-21');
+        console.log(date3);
+        let date4 = new Date('Sun Jan 27 2021 12:00:00 GMT+0800 (中国标准时间)');
+        console.log(date4);
+        let date5 = new Date(1498099000356);
+        console.log(date5);
+        // 第二个返回的是5月:年，月，日，时，分，秒，
+        let date6 = new Date(2015, 4, 1);
+        console.log(date6);
+
+        let params = [2020, 06, 12, 16, 20, 59];
+        let date7 = new Date(...params);
+        console.log(date7);
+
+        // 日期格式化
+
+        console.log(date1.getFullYear());
+        // 0-11
+        console.log(date1.getMonth() + 1);
+        console.log(date1.getDate());
+        console.log(date1.getHours());
+        console.log(date1.getMinutes());
+        console.log(date1.getUTCMinutes());
+        console.log(date1.getSeconds());
+        console.log(date1.getUTCSeconds());
+        console.log(date1.getMilliseconds());
+        // 0-6:0是星期日
+        console.log(date1.getDay());
+        // 获取时间戳
+        console.log(date1.getTime());
+        // 方式一：获取 Date 对象的时间戳（最常用的写法）
+        const timestamp1 = +new Date();
+        console.log(timestamp1); // 打印结果举例：1589448165370
+
+        // 方式二：获取 Date 对象的时间戳（较常用的写法）
+        const timestamp2 = new Date().getTime();
+        console.log(timestamp2); // 打印结果举例：1589448165370
+
+        // 方式三：获取 Date 对象的时间戳
+        const timestamp3 = new Date().valueOf();
+        console.log(timestamp3); // 打印结果举例：1589448165370
+
+        // 方式4：获取 Date 对象的时间戳
+        const timestamp4 = new Date() * 1;
+        console.log(timestamp4); // 打印结果举例：1589448165370
+
+        // 方式5：获取 Date 对象的时间戳
+        const timestamp5 = Number(new Date());
+        console.log(timestamp5); // 打印结果举例：1589448165370
+
+        // 方式6：now()
+        let ttt=Date.now()	//ES5的方法
+        console.log(ttt);
+        // 除了get方法，还有对应的set方法
+         date1.setHours(11);
+
+        console.log(date1);
+
+    </script>
+</body>
+
+</html>

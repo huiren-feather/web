@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./内置对象-Date-计算时间差.js"></script>
+    <style>
+        div {
+            width: 800px;
+            height: 200px;
+            color: red;
+            font-size: 30px;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+
+    <script>
+        let targetDate =new Date('2022/02/03 11:20:00');
+
+        let div=document.querySelector('div');
+        console.log(div);
+
+        let timer=setInterval(()=>{
+            let nowDate=new Date();
+
+            let date=getInterval(nowDate,targetDate);
+            console.log(date);
+            date.hour=date.hour<10?'0'+date.hour:date.hour;
+            date.minute=date.minute<10?'0'+date.minute:date.minute;
+            date.second=date.second<10?'0'+date.second:date.second;
+            if (date.millisecond<10) {
+                date.millisecond= '00'+date.millisecond;
+            } else if (date.millisecond<100) {
+                date.millisecond='0'+date.millisecond
+            }
+            
+
+            console.log(date);
+
+            if (date<0) {
+                div.innerHTML='距离熔炉出道还有00天00小时00分00秒000毫秒'
+                clearInterval(timer);
+                return;
+            }
+            div.innerHTML = '距离熔炉出道还有' + date.day + '天' + date.hour + '小时' + date.minute + '分' + date.second + '秒' + date.millisecond + '毫秒';
+        },1);
+
+    </script>
+</body>
+</html>

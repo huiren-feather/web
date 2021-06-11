@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 添加元素
+
+        // 1.array.push(value1,...)
+        let arr = [1,2,3];
+        let result=arr.push(222,12);
+        console.log(result);
+        console.log(arr);
+
+        // 2.Array.unshift(value1,value2,…)
+         arr = [1,2,3];
+        result=arr.unshift(6,2);
+        console.log(result);
+        console.log(arr);
+            // 开始位置，删除个数，插入的值
+        // 3.splice(index,0,    value1,value2,…)
+        arr = [1,2,3];
+        result=arr.splice(1,2,8,9,0);
+        console.log(result);
+        console.log(arr);
+
+
+        // 删除元素
+        // 1.pop()；删除一个元素
+        arr = [1,2,3];
+        result=arr.pop();
+        console.log(result);
+        console.log(arr);
+
+        // 2.shift() :从头部删除一个元素
+        arr = [1,2,3];
+        result=arr.shift();
+        console.log(result);
+        console.log(arr);
+
+        // 3.splice(index,howmany) :在index处删除howmany个元素
+        arr = [1,2,3];
+        result=arr.splice();
+        console.log(result);
+        console.log(arr);
+    </script>
+</body>
+</html>

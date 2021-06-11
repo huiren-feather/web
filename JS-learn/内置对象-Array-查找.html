@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 查找某个元素
+        // 1.indexOf
+        let arr=[23432,23464,7589,345,'按时发',2,3,4,5,6];
+
+        let result=arr.indexOf(3,3);
+        console.log(result);
+        console.log(arr);
+
+        // 2.lastIndexOf:倒着查
+        let re=arr.lastIndexOf(3,8);
+        console.log(re);
+        console.log(arr);
+
+        // 3.遍历求和
+        let r=arr.reduce((res,cur)=>{
+            return res+=cur;
+        },0);
+        console.log(r);
+
+        // 4.reduceRight:倒着求和
+        let r1=arr.reduceRight((res,cur)=>{
+            return res+=cur;
+        },0);
+        console.log(r1);
+
+        // 5.判断是否是数组
+        let r2=Array.isArray(arr);
+        let r3=Array.isArray('24,3213212,4234,23423');
+        console.log(r2);
+        console.log(r3);
+    </script>
+</body>
+</html>
