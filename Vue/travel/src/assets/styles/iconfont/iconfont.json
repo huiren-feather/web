@@ -1,0 +1,30 @@
+{
+  "id": "2717500",
+  "name": "travel",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "Travel项目图标",
+  "glyphs": [
+    {
+      "icon_id": "2674472",
+      "name": "返回",
+      "font_class": "fanhui",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "2675116",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    },
+    {
+      "icon_id": "10992168",
+      "name": "箭头",
+      "font_class": "jiantou",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    }
+  ]
+}
