@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrong {
+            border: 2px solid red;
+        }
+        .right {
+            border: 2px solid #91B81D;
+        }
+    </style>
+</head>
+<body>
+
+    账号：<input type="text" onblur="fn(this)"><br><br>
+    密码：<input type="password" onblur="fn(this)">
+    <script>
+        function fn(aaa){
+            console.log(this);//window
+            console.log(aaa);//标签
+            if (aaa.value.length<6||aaa.value.length>12) {
+                aaa.className='wrong';
+            } else {
+                aaa.className='right';
+            }
+        }
+    </script>
+</body>
+</html>

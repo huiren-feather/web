@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+    </div>
+    <script>
+              let box=document.querySelector('.box');
+              console.log(box); 
+        document.keydown = function(event) {
+      
+           
+            event = event || window.event;
+            let speed = 10;
+
+            if (event.ctrlkey) {
+                console.log('fast');
+                speed += 10;
+            }
+            if (event.shiftkey) {
+                console.log('slow');
+                speed -= 10;
+            }
+            switch (event.keyCode) {
+                case 37:
+                    console.log('左');
+                    box.style.left = box.offsetLeft - speed + 'px';
+                    break;
+                case 39:
+                console.log('右');
+
+                    box.style.left = box.offsetLeft + speed + 'px';
+                    break;
+                case 38:
+                console.log('上');
+
+                    box.style.top=box.offsetTop-speed+'px';
+                    break;
+                case 40:
+                console.log('下');
+
+                    box.style.top=box.offsetTop+speed+'px';
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

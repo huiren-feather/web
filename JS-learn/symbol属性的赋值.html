@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let mySymbol=Symbol();
+        let obj={
+            name:'huiren',
+            age:27           
+        }
+
+        obj[mySymbol]='hello';
+        console.log(obj);
+
+        for (const key in obj) {
+           console.log(key);
+        }
+
+        let mySymbol1 = Symbol();
+
+        let mySymbol2 = Symbol();
+
+console.log(mySymbol1 == mySymbol2); //打印结果：false
+console.log(mySymbol1);         //打印结果：Symbol()
+console.log(mySymbol2);         //打印结果：Symbol()
+
+console.log(mySymbol.iterator);
+console.log(Symbol.iterator);
+
+        // 可以用来定义常量
+
+
+    </script>
+</body>
+</html>

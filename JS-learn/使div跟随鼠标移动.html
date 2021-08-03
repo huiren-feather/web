@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./封装scrollTop和scrollLeft.js"></script>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        let box=document.querySelector('.box');
+        document.onmousemove=function(event){
+            event=event||window.event;
+
+            // 获取鼠标在页面的位置
+            let pagex=event.pageX||scroll().left+event.clientX;
+            let pagey=event.pageY||scroll().top+event.clientY;
+        
+            box.style.left=pagex+'px';
+            box.style.top=pagey+'px';
+        };
+
+    </script>
+</body>
+</html>

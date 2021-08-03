@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./封装scrollTop和scrollLeft.js"></script>
+    <script >
+        window.onload =function(){
+            let topDiv=document.getElementById('top');
+            let height=topDiv.offsetHeight;
+            let middle=document.getElementById('Q-nav1');
+            let main=document.getElementById('main');
+            console.log(height);
+            window.onscroll=function(){
+                console.log(scroll().top);
+                if (scroll().top>height) {
+                    middle.className ='fixed';
+                    main.style.paddingTop=middle.offsetHeight+'px';
+                }else {
+                    middle.className='';
+                    main.style.paddingTop=0;
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+        img {
+            /* 图片和文字顶部对齐 */
+            vertical-align: top;
+        }
+        .main {
+            margin: 0 auto;
+            width: 1000px;
+            margin-top: 10px;
+        }
+        #Q-nav1 {
+            overflow: hidden;
+        }
+        .fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="top" id="top">
+        <img src="../jd实战/images/pic2.jpg" alt="">
+    </div>
+    <div id="Q-nav1"><img src="../jd实战/images/pic1.jpg" alt=""></div>
+    <div class="main" id="main"><img src="../jd实战/images/top.jpg" alt=""></div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    账号：<input type="text" placeholder="mi">
+    <button>禁用</button><button>启用</button>
+    密码：<input type="password" name="" id="" value="123">
+    <script>
+        var input=document.querySelectorAll('input')[0];
+        var btn1=document.querySelectorAll('button')[0];
+        var btn2=document.querySelectorAll('button')[1];
+        btn1.onclick=function(){
+            input.disabled=true;//随便什么值都行，不能为空，一般我都写'disabled'或者true
+        }
+        btn2.onclick=function(){
+            input.disabled=''//false ，或者空
+        }
+    </script>
+</body>
+</html>

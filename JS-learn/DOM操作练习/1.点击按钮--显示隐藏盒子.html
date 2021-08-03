@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            margin: 10px;
+        }
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+        .show {
+            display: block;
+        }
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">隐藏</button>
+    <div>
+        生命一号
+    </div>
+    <script>
+        var div=document.querySelector('div');
+        var btn=document.querySelector('#btn');
+        btn.addEventListener('click',function(){
+            if (btn.innerHTML=='隐藏') {
+                div.style.display='none';
+                btn.innerHTML='显示';
+            } else {
+                div.style.display='block';
+                btn.innerHTML='隐藏';
+            }
+        });
+    </script>
+</body>
+</html>

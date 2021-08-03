@@ -91,6 +91,19 @@ window.onload=function(){
             ul.style.left=-imgWidth*(olLiArr.length)+'px';
             key=olLiArr.length-1;
         }
+        animate(ul,-key*imgWidth);
+        square--;
+        if (square<0) {
+            square=olLiArr.length-1;
+        }
+        for(let i=0;i<olLiArr.length;i++){
+            olLiArr[i].className='';
+        }
+        olLiArr[square].className='current';
+    }
+    spanArr[1].onclick=function(){
+        // 右侧和定时器一样
+        autoPlay();
     }
 
 }

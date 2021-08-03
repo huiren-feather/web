@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 数组的
+        {
+            let [foo=true]=[];
+            console.log(foo);//true
+        }
+    
+        {
+            let [a,b]=['huiren'];
+            console.log(a);
+            console.log(b);
+        }
+
+        // 对象的
+        // 键的名字和变量对应
+        {
+            let person={
+                name:'huiren',
+                age:27,
+                gender:'male'
+            }
+            let {name,age,gender}=person;
+            // let {name,...age}=person;
+            console.log(name);
+            console.log(age);
+        }
+        // 不一样的方法
+        {
+            let person={
+                name:'huiren',
+                age:27,
+                gender:'male'
+            } 
+            let {name:n,age:a,gengder:g}=person;
+            console.log(n);
+        }
+        // 字符串的
+        {
+            let [a,b,c,d]='hello';
+            console.log(a);
+            console.log(b);
+            console.log(c);
+            console.log(typeof a);
+        }
+    </script>
+</body>
+</html>

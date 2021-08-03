@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.model层的接口封装
+        const promise = new Promise((resolve, reject) => {
+            setTimeout(function () {
+                let data = { retCode: 1, msg: 'huiren' };//接口数据
+
+                if (data.retCode == 0) {
+                    resolve(data);
+
+                } else {
+                    reject({ retCode: -1, msg: 'network error' });
+                }
+
+            }, 100);
+        });
+        // 2.业务层的接口调用。这里的data就是从resolve和reject传过来的，也就是从接口拿到的数据
+        promise
+            .then((data) => {
+                console.log(data);
+            })
+            .catch((data) => {
+                console.log(data);
+            })
+
+
+
+        {
+            // Promise封装Ajax请求
+            // 写法1：
+            const request = require('request');
+            function request1() {
+                return new Promise((resolve, reject) => {
+                    request('https://www.baidu.com', function (response) {
+                        if (response.retCode == 200) {
+                            resolve('requset1 success' + response);
+                        } else {
+                            reject('接口请求失败');
+                        }
+                    });
+                });
+            }
+            request1().then((res1) => {
+                console.log(res1);
+                return request2();
+            })
+
+        }
+
+
+        //基于 Promise 处理多次 Ajax 请求（链式调用）【重要】
+        {
+            const request = require('request');
+            // 封装接口1
+            const request1 = function () {
+                const promise = new Promise((resolve, reject) => {
+                    request('https://www.baidu.com', function (response) {
+                        if (response.retCode == 200) {
+                            resolve('request1 success' + response);
+                        } else {
+                            reject('接口请求失败');
+                        }
+                    });
+                });
+
+                return promise;
+            };
+            // 封装接口2
+            const request2 = function () {
+                const promise = new Promise((resolve, reject) => {
+                    request('https://www.id.com', function (response) {
+                        if (response.retCode == 200) {
+                            resolve('request2 success' + response);
+                        } else {
+                            reject('接口请求失败');
+                        }
+                    });
+                });
+
+                return promise;
+            };
+
+            // 封装接口3
+            const request3 = function () {
+                const promise = new Promise((resolve, reject) => {
+                    request('https://www.taobao.com', function (response) {
+                        if (response.retCode == 200) {
+                            resolve('request3 success' + response);
+                        } else {
+                            reject('接口请求失败');
+                        }
+                    });
+                });
+                return promise;
+            };
+
+            // 接口调用
+            request1().
+                then((res1) => {
+                    console.log(res1);
+                    request2();
+                })
+                .then((res2) => {
+                    console.log(res2);
+                    request3();
+                })
+                .then((res3) => {
+                    console.log(res3);
+                })
+
+        }
+
+        //         ## Promise 的常用 API：对象方法【重要】
+
+        // Promise 自带的 API 提供了如下对象方法：
+
+        // - Promise.all()：并发处理多个异步任务，所有任务都执行成功，才能得到结果。
+
+        // - Promise.race(): 并发处理多个异步任务，只要有一个任务执行成功，就能得到结果。
+        {
+            // 封装promise 接口调用
+            function queryData(url) {
+                return new Promise((resolve, reject) => {
+                    var xhr = new XMLHttpRequest();
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState != 4) {
+                            return;
+                        }
+                        if (xhr.readyState == 4 && xhr.status == 200) {
+                            resolve(xhr.responseText);
+                        } else {
+                            reject('服务器错误');
+                        }
+                    };
+                    xhr.open('get', url);
+                    xhr.send(null);
+                });
+            }
+            var promise1 = queryData('http://localhost:3000/api1');
+            var promise2 = queryData('http://localhost:3000/api2');
+            var promise3 = queryData('http://localhost:3000/api3');
+
+            Promise.all([promise1, promise2, promise3]).then((result) => {
+                console.log(result);
+            });
+        }
+
+        {
+            /*
+        封装 Promise 接口调用
+      */
+            function queryData(url) {
+                return new Promise((resolve, reject) => {
+                    var xhr = new XMLHttpRequest();
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState != 4) return;
+                        if (xhr.readyState == 4 && xhr.status == 200) {
+                            // 处理正常结果
+                            resolve(xhr.responseText);
+                        } else {
+                            // 处理异常结果
+                            reject('服务器错误');
+                        }
+                    };
+                    xhr.open('get', url);
+                    xhr.send(null);
+                });
+            }
+
+            var promise1 = queryData('http://localhost:3000/api1');
+            var promise2 = queryData('http://localhost:3000/api2');
+            var promise3 = queryData('http://localhost:3000/api3');
+
+            Promise.race([promise1, promise2, promise3]).then((result) => {
+                console.log(result);
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 100px;
+            width: 100px;
+            background-color: skyblue;
+        }
+
+    </style>
+</head>
+<body>
+    <span class="box">啦啦啦啦，冒不冒泡</span>
+    <script>
+        let box=document.querySelector('.box');
+        box.addEventListener('click',function(e){
+            alert('冒泡child');
+            e=e||window.event;
+            // 如果是true，则此事件是冒泡的
+            console.log(e.bubbles);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            width: 300px;
+            height: 36px;
+            padding-left: 5px;
+            color: #ccc;
+        }
+
+        label {
+            position: absolute;
+            top: 82px;
+            left: 56px;
+            font-size: 12px;
+            color: #ccc;
+            cursor: text;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    京东：<input type="text" id="inp1" value="单反相机"><br><br>
+    淘宝：<label for="inp2">电灯泡</label><input type="text" id="inp2"><br><br>
+    placeholder：<input type="text" placeholder="我就是个提示">
+    <script>
+        var inp1=document.querySelector('#inp1');
+        inp1.onfocus=function(){
+            if (this.value=='单反相机') {
+                inp1.value='';
+                inp1.style.color='#000';
+
+            }
+        }
+        inp1.onblur=function(){
+            if (this.value=='') {
+                inp1.value='单反相机';
+                inp1.style.color='#ccc';
+            }
+        }
+    // 在文本框输入文字，labe隐藏
+    var inp2=document.querySelector('#inp2');
+    var lab=document.querySelector('label');
+    inp2.oninput=function(){
+        if (this.value=='') {
+            lab.className='show';
+        } else {
+            lab.className='hide';
+        }
+    }
+    </script>
+</body>
+</html>
