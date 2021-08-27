@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box {
+      width: 400px;
+      height: 600px;
+      background-color: red;
+    }
+
+    #box .float-div {
+      float: left;
+      /*浮动起来*/
+      clear: both;
+      /*这个很重要，不然会排版出错*/
+      background: rgba(0, 0, 0, 0.2);
+      /*这里只是为了看看而已*/
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box">
+    <span id="text">我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，我是一段文本而已，</span>
+</div>
+<script>
+
+
+// JS 部分仅仅是为了生成 div, 就不多优化了
+var box = document.getElementById('box')
+var text = document.getElementById('text')
+var bH = box.offsetHeight
+var bW = box.offsetWidth
+var step = 10
+var dH = 10
+var dW = bW - step * 4
+var num = parseInt(bH / dH)
+var tem = document.createDocumentFragment()
+for(var i=0;i < num && dW > 0;i++){
+    var d = document.createElement('div')
+    d.style.height = dH + 'px'
+    d.style.width = dW + 'px'
+    d.classList.add('float-div')
+    tem.appendChild(d)
+    dW -= step
+}
+box.insertBefore(tem,text)
+
+</script>
+</body>
+
+</html>
