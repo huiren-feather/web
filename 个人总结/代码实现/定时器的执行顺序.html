@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function test() {
+      var aa = 1;
+      var testSet = setInterval(function () {
+        aa++;
+        console.log(123);
+        if (aa < 10) {
+          clearInterval(testSet);
+        }
+      },20);
+    }
+  var testSet1 = setTimeout(function(){
+    console.log(321);
+  },2000)
+  for(let i=0;i<10;i++){
+    console.log('test');
+  }
+  test()
+  </script>
+</body>
+
+</html>

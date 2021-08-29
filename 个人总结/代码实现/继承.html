@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Animal(name) {
+      this.name = name;
+      this.showName = function () {
+        console.log(this.name);
+      }
+    }
+    function Cat(name) {
+      // Animal.apply(this,[name]);
+      // Animal.call(this, name)
+      // bind用法：先调用再传参
+      Animal.bind(this)(name)
+    }
+    var cat = new Cat('黑狗');
+    cat.showName()
+    console.log(cat);
+
+
+function Cat1 (name) {
+	// apply用法：传参传一个数组
+	Animal.apply(this, [name]) //第二次调用
+}
+Cat1.prototype = new Animal() //第一次调用
+var cat1 = new Cat1('飞翔的哔哔鸡')
+cat1.showName()
+console.log(cat1);
+  </script>
+</body>
+
+</html>

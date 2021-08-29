@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // IIFE：使用自执行函数来编写模块化，特点：在一个单独的函数作用域中执行代码，避免变量冲突。
+    (function () {
+      return {
+        data:[]
+      }
+    })()
+
+    // AMD：使用requireJS 来编写模块化，特点：依赖必须提前声明好。
+    define('./index.js', function(code) {
+      // code就是index的返回值
+      
+    });
+
+    // CMD：使用seaJS 来编写模块化，特点：支持动态引入依赖文件。
+    define(function(require, exports,module) {
+      var indexCode=require('./index.js')
+      
+    });
+    // CommonJS：nodejs 中自带的模块化。
+    var fs=require('fs');
+
+    // ES Modules：ES6 引入的模块化，支持import 来引入另一个 js 。
+    import a from 'a'
+    
+  </script>
+
+</body>
+
+</html>
