@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 根据前序和中序遍历，重建二叉树
+    function reConstrucBinaryTree(pre,vin){
+      if (pre.length==0) {
+        return null;
+      }
+      if (pre.length==1) {
+        return new TreeNode(pre[0]);
+      }
+      const value=pre[0];
+      const index= vin.slice(value);
+      const vinLeft=vin.slice(0,index);
+      const vinRight=vin.slice(index+1);
+      const preLeft=pre.slice(1,index+1);
+      const preRight=pre.slice(index+1);
+      const node = new TreeNode(value);
+      node.left = reConstrucBinaryTree(preLeft,vinLeft);
+      node.right = reConstrucBinaryTree(preRight,vinRight);
+      return node;
+    }
+
+    // 根据前序和中序遍历，求其后序遍历
+    let pre;
+    let vin;
+    while(pre=readline()){
+      vin = readline();
+      print(getHRD(pre,vin));
+    }
+    function getHRD(pre,vin){
+      
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 递归实现
+
+    // 中序遍历
+    var inorderTraversal = function (root, array = []) {
+      if (root) {
+        inorderTraversal(root.left, array);
+        array.push(root.val);
+        inorderTraversal(root.right, array);
+      }
+      return array;
+    }
+    // 前序遍历
+    var preorderTraversal = function (root, array = []) {
+      if (root) {
+        array.push(root.val);
+        inorderTraversal(root.left, array);
+        inorderTraversal(root.right, array);
+      }
+      return array;
+    }
+    // 后序遍历
+    var postorderTraversal = function (root, array = []) {
+      if (root) {
+        inorderTraversal(root.left, array);
+        inorderTraversal(root.right, array);
+        array.push(root.val);
+      }
+      return array;
+    }
+
+
+    // 非递归实现
+    // 中序和前序基本一致，只是位置不同
+
+    // 中序
+    var inorderTraversal = function (root) {
+      const result = [];
+      const stack = [];
+      let current = root;
+      while (current || stack.length > 0) {
+        while (current) {
+          stack.push(current);
+          current = current.left;
+        }
+        current = stack.pop();
+        result.push(current.val);//输出
+        // 转向
+        current = current.right
+      }
+
+      return result;
+    }
+
+    // 前序
+    var preorderTraversal = function (root) {
+      const result = [];
+      const stack = [];
+      let current = root;
+      while (current || stack.length > 0) {
+        while (current) {
+          stack.push(current);
+          result.push(current.val);//输出
+          current = current.left;
+        }
+        current = stack.pop();
+
+        // 转向
+        current = current.right
+      }
+      return result;
+    }
+
+
+    // 后序
+    var postorderTraversal =function (root) {
+      const result =[];
+      const stack= [];
+      let last=null  //标记是否被访问
+      let current =root;
+      while(current || stack.length){
+        while(current){
+          stack.push(current);
+          current=current.left;
+        }
+        current = stack[stack.length-1];
+        if (!current.right || current.right==last) {
+          result.push(current.val);
+          stack.pop();
+          // 纪录上一个访问的节点
+          // 用于判断“访问根节点前，右子树是否已经被访问过”
+          last =current
+          // 不需要转向，继续
+          current=null;
+        }else {
+          current=current.right;
+        }
+
+      }
+      return result
+    }
+
+
+
+
+    let arr = [1, null, 2, 3], arr1 = [];
+    let res = inorderTraversal(arr, arr1);
+    console.log(res);
+  </script>
+</body>
+
+</html>
