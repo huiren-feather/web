@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 判断对称性
+    function isSymmetrical(pRoot){
+      return isSymmetricalTree(pRoot,pRoot);
+    }
+    function isSymmetricalTree(node1,node2){
+      if (!node1 && !node2) {
+        return true;
+      }
+      if (!node1 || !node2) {
+        return false;
+      }
+      if (node1.val !=node2.val) {
+        return false;
+      }
+      return isSymmetricalTree(node1.left,node2.right) && isSymmetricalTree(node1.right,node2.left);
+    }
+
+    // 求二叉树的镜像
+    function Mirror(root){
+      let temp=root.left;
+      root.left=root.right;
+      root.right=temp;
+      Mirror(root.left);
+      Mirror(root.right);
+    }
+  </script>
+</body>
+</html>

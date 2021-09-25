@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 给定一棵二叉搜索树，请找出其中的第k小的结点。 例如， （5，3，7，2，4，6，8） 中，按结点数值大小顺序第三小结点的值为4。
+    // 递归方式
+    function KthNode(pRoot,k){
+      var arr=[];
+      loopThrough(arr,pRoot);
+      if (k>0 && k<=arr.length) {
+        return arr[k-1];
+      }
+      return null;
+    }
+    function loopThrough(arr,node){
+      loopThrough(node.left);
+      arr.push(node.val);
+      loopThrough(node.right);
+    }
+    // 非递归方式
+    function KthNode(pRoot,k){
+      const arr=[];
+      const stack=[];
+      let current=pRoot;
+      while(current || stack.length>0)
+      while(current){
+        stack.push(current);
+        current=current.left;
+      }
+      current=stack.pop();
+      arr.push(current);
+      current=current.right;
+    }
+    if (k>0 && k<=arr.length) {
+      return arr[k-1];
+    }
+    return null;
+  </script>
+</body>
+</html>

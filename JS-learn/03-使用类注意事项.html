@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+    <script>        
+    // 1、在ES6中类没有变量提升，所以必须先定义类，才能通过类实例化对象
+var that;
+         class Star {
+            constructor(uname,age) {
+                // this指向创建的实例对象
+                this.uname=uname; 
+                this.age=age;
+                console.log(this);
+                that=this;
+                // this.sing();
+                this.btn=document.querySelector('button');
+                // 为啥不加（）
+                this.btn.onclick=this.sing;
+            }
+            // 方法
+            sing() {
+                // this指向btn这个按钮，因为按钮调用了它
+                // console.log("我唱歌");
+                // console.log(this.uname+song);
+                console.log(this);
+                console.log(that.uname);
+            }
+            dance(){
+                // this指向创建的实例对象
+                console.log(this);
+            }
+        }
+
+        var ldh=new Star('刘德华');
+        ldh.sing();
+        // 2.类里面的共有的属性和方法一定要加this使用
+
+    </script>
+</body>
+</html>

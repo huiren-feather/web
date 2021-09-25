@@ -5,6 +5,7 @@
 ## how：
 
 <HTML>   
+
     <head>     
         <title></title>
     </head>
@@ -110,7 +111,6 @@ HTML5    <!DOCTYPE html>
 #### 字符集
 
 <meta charset="utf-8">
-    
 </meta>
 
 <header> 语义 :定义页面的头部  页眉</header>
@@ -150,6 +150,8 @@ embed可以用来插入各种多媒体，格式可以是 Midi、Wav、AIFF、AU�
 因为兼容性问题，我们这里只讲解 插入网络视频， 后面H5会讲解 audio 和video 视频多媒体。 
 
 <embed src="http://player.youku.com/player.php/sid/XMTI4MzM2MDIwOA==/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+
+
 
 - audio：播放音频
 
@@ -225,4 +227,16 @@ input属性
 ### 作业：
 
 做一个学生信息表单
+
+### 页面结构实例
+
+![page](HTML总结.assets/page-16307364846333.png)
+
+### viewport
+
+目的：在不同设备上保持统一效果
+
+<meta name="viewport" content="width=device-width"  />
+
+width: 设置viewport宽度，
 
