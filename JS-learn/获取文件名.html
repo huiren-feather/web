@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script language="JavaScript">
+		var fso=new ActiveXObject("Scripting.FileSystemObject");
+		var s=fso.GetFolder("D:/数据管理/所有报表和大屏的结构/天正数据中心");
+		var fn=new Enumerator(s.files);
+		var s="";
+		for(;!fn.atEnd();fn.moveNext()){
+			s=s+fn.item()+"\n";
+		}
+		console.log(s);;
+	</script>
+	<body>
+	</body>
+</html>

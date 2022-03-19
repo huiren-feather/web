@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var strs=["eat", "tea", "tan", "ate", "nat", "bat"];
+        var groupAnagrams = function(strs) {
+    const map=new Map();
+    for(let str of strs){
+        let array=Array.from(str);
+        array.sort();
+        let key=array.toString();
+        let list=map.get(key) ? map.get(key) : new Array();
+        list.push(str);
+        map.set(key,list);
+    }
+    console.log(Array.from(map.values())) ;
+};
+groupAnagrams(strs);
+
+    </script>
+</body>
+</html>

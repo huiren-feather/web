@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: #58a;
+        }
+    </style>
+</head>
+<body>
+    <div id="ad"></div>
+    <script>
+        // 需求-1  点击div 2s 后颜色变为粉色
+        let ad=document.getElementById('ad');
+        ad.addEventListener('click',function(){
+            console.log(this);
+            // 2s,需要定时器
+            setTimeout(()=> {
+                console.log(this);
+                this.style.background='pink';
+            },2000)
+        })
+
+        // 需求-2 从数组中返回偶数的元素
+        const arr=[1,6,7,10,100,23];
+        // let res=function(){
+        //     for(let i=0;i<arr.length;i++){
+        //         if(arr[i]%2==0){console.log(arr[i]);}
+        //     }
+        // }
+        // res();
+
+        // const result=arr.filter(function(item){
+        //     return item%2===0?true:false
+        // })
+        // console.log(result);
+
+        const result=arr.filter(item=>item%2===0)
+        console.log(result);
+
+        // 箭头函数适合：与this无关的回调，定时器、数组的方法回调
+    </script>
+</body>
+</html>

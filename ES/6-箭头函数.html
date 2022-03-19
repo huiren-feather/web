@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ES6允使用箭头=>  定义函数
+        // let fn=(a,b)=>{
+        //     return a+b;
+        // }
+        // console.log(fn(1,2));
+        // 1. this 是静态的，始终执行函数声明时所在作用域下的this的值
+        function getName(){
+            console.log(this.name);
+        }
+        let getName2=()=>{
+            console.log(this.name);
+        }
+        window.name='yhh';
+        const school={
+            name:'AAAA'
+        }
+
+        getName();
+        getName2();
+
+        // call
+        getName.call(school);
+        getName2.call(school);
+
+        // 2. 不能作为构造函数实例化对象
+        let Person =(name,age)=>{
+            this.name=name;
+            this.age=age;
+        }
+        // let me=new Person('xiao',30);
+        // console.log(me);
+
+        // 3.不能使用arguments变量
+        // let fn=()=>{
+        //     console.log(arguments);
+        // };
+        // fn(1,2,3);
+
+        // 4.箭头函数的简写
+        // 4-1 省略小括号，当形参只有1个时
+        let add=n=>{
+            return n+n;
+        }
+        console.log(add(3));
+        // 4-2 省略大括号，当代码体只有一条语句时,return 必须省略
+        let pow= n => n*n
+        console.log(pow(3));
+    </script>
+</body>
+</html>

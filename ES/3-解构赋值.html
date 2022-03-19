@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ES6允许按照一定的规则从数组和对象中提取值，对变量进行赋值，
+        // 被称作解构赋值
+        // 1.数组的解构
+        const F4=['yuan','hong','hui'];
+        let [xin,m2,m3]=F4;
+        console.log(xin);
+        console.log(m2);
+        console.log(m3);
+        // 2.对象的解构
+        // 键名必须一致
+        const zhao={
+            name:'zhaobenshan',
+            age:88,
+            xiaopin: function(){
+                console.log('i can play');
+            }
+        }
+        let {name,age,xiaopin}=zhao;
+        console.log(name);
+        console.log(age);
+        console.log(xiaopin);
+        xiaopin();
+    </script>
+</body>
+</html>

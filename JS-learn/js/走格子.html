@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// while(line = readline()) {
+    let line='2 3'
+    const arr = line.split(' ').map(item => parseInt(item));
+    const [n, m] = arr;
+  //这里很坑，fill的参数千万不能直接给array，引用类型修改会影响全部元素
+    let table = Array(m + 1).fill(0).map(x => Array(n + 1).fill(1));
+    // console.log(table);
+ 
+    for (let i = 1; i <= n; i++) {
+        for(let j=1; j<= m; j++) {
+            table[j][i] = table[j - 1][i] + table[j][i-1];
+        }
+    }
+    console.log(table[m][n]);
+// }
+    </script>
+</body>
+</html>
